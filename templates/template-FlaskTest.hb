@@ -1,10 +1,10 @@
-Sua tarefa é aplicar **teste de mutação** ao seguinte código:
+Sua tarefa é aplicar teste de mutação ao seguinte código:
 
-```text
+```
 {{{code}}}
 ```
 
-substituindo o **PLACEHOLDER** por um trecho de código com defeito (*buggy*) que apresente comportamento diferente do trecho de código original, que era:
+substituindo o PLACEHOLDER por um trecho de código com defeito (buggy) que apresente comportamento diferente do trecho de código original, que era:
 
 ```
 {{{orig}}}
@@ -12,23 +12,15 @@ substituindo o **PLACEHOLDER** por um trecho de código com defeito (*buggy*) qu
 
 Considere alterações como:
 
-* usar operadores diferentes;
-* alterar constantes;
-* referenciar variáveis diferentes;
-* utilizar propriedades de objetos diferentes;
-* chamar funções ou métodos diferentes.
+usar operadores diferentes;
+alterar constantes;
+referenciar variáveis diferentes;
+utilizar propriedades de objetos diferentes;
+chamar funções ou métodos diferentes.
 
-Forneça **três respostas** como blocos de código delimitados (*fenced code blocks*), contendo apenas **uma única linha de código**, utilizando o seguinte modelo:
+Forneça três respostas como blocos de código delimitados (fenced code blocks), contendo apenas uma única linha de código, utilizando o seguinte modelo:
 
-**Opção 1:** O PLACEHOLDER pode ser substituído por:
-
-```
-<trecho de código>
-```
-
-Isso resultaria em um comportamento diferente porque <breve explicação>.
-
-**Opção 2:** O PLACEHOLDER pode ser substituído por:
+Opção 1: O PLACEHOLDER pode ser substituído por:
 
 ```
 <trecho de código>
@@ -36,7 +28,7 @@ Isso resultaria em um comportamento diferente porque <breve explicação>.
 
 Isso resultaria em um comportamento diferente porque <breve explicação>.
 
-**Opção 3:** O PLACEHOLDER pode ser substituído por:
+Opção 2: O PLACEHOLDER pode ser substituído por:
 
 ```
 <trecho de código>
@@ -44,4 +36,12 @@ Isso resultaria em um comportamento diferente porque <breve explicação>.
 
 Isso resultaria em um comportamento diferente porque <breve explicação>.
 
-Por favor, conclua sua resposta com **"DONE."**
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```
+<trecho de código>
+```
+
+Isso resultaria em um comportamento diferente porque <breve explicação>.
+
+Por favor, conclua sua resposta com "DONE."
