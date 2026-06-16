@@ -9,7 +9,7 @@ export function getStartColumn(
   projectPath: string,
   fileName: string,
   lineNr: number,
-  originalCode: string
+  originalCode: string,
 ): number {
   const lines = fs
     .readFileSync(path.join(projectPath, fileName))
@@ -26,7 +26,7 @@ export function getEndColumn(
   projectPath: string,
   fileName: string,
   lineNr: number,
-  originalCode: string
+  originalCode: string,
 ): number {
   const lines = fs
     .readFileSync(path.join(projectPath, fileName))
@@ -55,11 +55,11 @@ export function hasUnbalancedParens(code: string): boolean {
 
 export function insertCommentOnLineWithPlaceholder(
   code: string,
-  comment: string
+  comment: string,
 ) {
   const lines = code.split("\n");
   const lineWithPlaceholder = lines.findIndex((line) =>
-    line.includes("<PLACEHOLDER>")
+    line.includes("<PLACEHOLDER>"),
   );
   if (lineWithPlaceholder === -1) {
     throw new Error("No line with placeholder found");
@@ -111,7 +111,7 @@ export function getText(
   startLine: number,
   startColumn: number,
   endLine: number,
-  endColumn: number
+  endColumn: number,
 ) {
   const startIndex = toIndex(code, startLine, startColumn);
   const endIndex = toIndex(code, endLine, endColumn);

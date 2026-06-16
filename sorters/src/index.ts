@@ -11,8 +11,10 @@ export class MyProject {
    * @returns The number concatenated to the string.
    *
    */
-  public static myMethod: (arg1: string, arg2: number) => string
-    = (arg1: string, arg2: number): string => arg1 + arg2;
+  public static myMethod: (arg1: string, arg2: number) => string = (
+    arg1: string,
+    arg2: number,
+  ): string => arg1 + arg2;
 }
 
-console.log(MyProject.myMethod('The number is: ', 5));
+console.log(MyProject.myMethod("The number is: ", 5));

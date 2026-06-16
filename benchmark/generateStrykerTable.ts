@@ -1,26 +1,28 @@
 import * as fs from "fs";
 
-/** 
+/**
  * Converts a string that was produced by the Unix time command (e.g, "2m0.390s")
  * to seconds. Output the number using up to two decimal places (e.g., 0.2342 -> 0.23)
  * @param {string} time - the time string
  * @returns {number} - the time in seconds
  */
-function timeInSeconds(time: string) : number {
-  const minutes = parseInt(time.substring(0, time.indexOf('m')));
-  const seconds = parseFloat(time.substring(time.indexOf('m')+1, time.indexOf('s')));
-  return parseFloat((minutes*60 + seconds).toFixed(2));
+function timeInSeconds(time: string): number {
+  const minutes = parseInt(time.substring(0, time.indexOf("m")));
+  const seconds = parseFloat(
+    time.substring(time.indexOf("m") + 1, time.indexOf("s")),
+  );
+  return parseFloat((minutes * 60 + seconds).toFixed(2));
 }
 
 /**
  * Use commas to separate thousands.
  */
 function numberWithCommas(x: number | string): string {
-  const y = (typeof x === "number") ? x.toString() : x;
+  const y = typeof x === "number" ? x.toString() : x;
   return y.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function generateStrykerTable(dirName: string) : string {
+function generateStrykerTable(dirName: string): string {
   let report = `
 % Table generated using the commmand "node benchmark/generateStrykerTable.js ${dirName}"
 \\begin{table*}[htb!]
@@ -36,7 +38,10 @@ function generateStrykerTable(dirName: string) : string {
   let totalTimedOut = 0;
   let totalTime = 0;
   for (const projectName of projectNames) {
-    const resultFile = fs.readFileSync(`${dirName}/${projectName}/StrykerInfo.json`, "utf8");
+    const resultFile = fs.readFileSync(
+      `${dirName}/${projectName}/StrykerInfo.json`,
+      "utf8",
+    );
     const resultJson = JSON.parse(resultFile);
     const nrKilled = parseInt(resultJson.nrKilled);
     const nrSurvived = parseInt(resultJson.nrSurvived);
@@ -45,7 +50,11 @@ function generateStrykerTable(dirName: string) : string {
     const time = timeInSeconds(resultJson.time).toFixed(2);
     const mutScore = resultJson.mutationScore;
     report += `
-  {\\it ${projectName}} & ${numberWithCommas(nrMutants)} & ${numberWithCommas(nrKilled)} & ${numberWithCommas(nrSurvived)} & ${numberWithCommas(nrTimedOut)} & ${mutScore} & ${numberWithCommas(time)} \\\\
+  {\\it ${projectName}} & ${numberWithCommas(nrMutants)} & ${numberWithCommas(
+      nrKilled,
+    )} & ${numberWithCommas(nrSurvived)} & ${numberWithCommas(
+      nrTimedOut,
+    )} & ${mutScore} & ${numberWithCommas(time)} \\\\
   \\hline`;
     totalMutants += nrMutants;
     totalKilled += nrKilled;
@@ -54,7 +63,11 @@ function generateStrykerTable(dirName: string) : string {
     totalTime += parseFloat(time);
   }
   report += `
-  {\\it Total} & ${numberWithCommas(totalMutants)} & ${numberWithCommas(totalKilled)} & ${numberWithCommas(totalSurvived)} & ${numberWithCommas(totalTimedOut)} & --- & ${numberWithCommas(totalTime.toFixed(2))} \\\\
+  {\\it Total} & ${numberWithCommas(totalMutants)} & ${numberWithCommas(
+    totalKilled,
+  )} & ${numberWithCommas(totalSurvived)} & ${numberWithCommas(
+    totalTimedOut,
+  )} & --- & ${numberWithCommas(totalTime.toFixed(2))} \\\\
   \\end{tabular}
   }
   \\caption{Results of applying the standard mutation operators of \StrykerJS.}

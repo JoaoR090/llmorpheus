@@ -1,14 +1,13 @@
 import * as fs from "fs";
 import path from "path";
 
-
 function createTableFooter(dirName: string, runNr: number): string {
   // get meta-info from first benchmark
   const results = fs.readdirSync(dirName);
   const firstBenchmarkName = results[0];
   const firstBenchmarkFile = fs.readFileSync(
     `${dirName}/${firstBenchmarkName}/summary.json`,
-    "utf8"
+    "utf8",
   );
   const firstSummary = JSON.parse(firstBenchmarkFile);
   const modelName = firstSummary.metaInfo.modelName;
@@ -83,7 +82,6 @@ function unzipDirIfNeccessary(dirName: string) {
 
 // create table with columns: time (LLMorpheus), time (Stryker), prompt tokens, completion tokens, total tokens
 export function generateCostsTable(dirName: string, runNr: number): string {
-
   unzipDirIfNeccessary(dirName);
 
   const results = fs.readdirSync(dirName);
@@ -114,23 +112,23 @@ export function generateCostsTable(dirName: string, runNr: number): string {
     if (benchmarkName === "zip") continue;
     const file = fs.readFileSync(
       `${dirName}/${benchmarkName}/summary.json`,
-      "utf8"
+      "utf8",
     );
     const summary = JSON.parse(file);
     const promptTokens = numberWithCommas(parseInt(summary.totalPromptTokens));
     const completionTokens = numberWithCommas(
-      parseInt(summary.totalCompletionTokens)
+      parseInt(summary.totalCompletionTokens),
     );
     const totalTokens = numberWithCommas(parseInt(summary.totalTokens));
     const strykerInfo = JSON.parse(
-      fs.readFileSync(`${dirName}/${benchmarkName}/StrykerInfo.json`, "utf8")
+      fs.readFileSync(`${dirName}/${benchmarkName}/StrykerInfo.json`, "utf8"),
     );
     const strykerTime: number = convertToSeconds(strykerInfo.time);
 
     // retrieve LLMorpheus time from the third to last line of file LLMorpheusOutput.txt after the word "real"
     const LLMorpheusOutput = fs.readFileSync(
       `${dirName}/${benchmarkName}/LLMorpheusOutput.txt`,
-      "utf8"
+      "utf8",
     );
     const lines = LLMorpheusOutput.split("\n");
     const summaryLine = lines[lines.length - 4];
@@ -139,9 +137,9 @@ export function generateCostsTable(dirName: string, runNr: number): string {
     const LLMorpheusTime: number = convertToSeconds(summaryLineTime);
 
     result += `\\textit{${benchmarkName}} & ${formatFixedNr(
-      LLMorpheusTime
+      LLMorpheusTime,
     )} & ${formatFixedNr(
-      strykerTime
+      strykerTime,
     )} & ${promptTokens} & ${completionTokens} & ${totalTokens} \\\\ \n`;
     result += `\\hline\n`;
 
@@ -153,9 +151,9 @@ export function generateCostsTable(dirName: string, runNr: number): string {
   }
   result += `
   \\textit{Total} & ${formatFixedNr(totalLLMorpheusTime)} & ${formatFixedNr(
-    totalStrykerTime
+    totalStrykerTime,
   )} & ${numberWithCommas(totalPromptTokens)} & ${numberWithCommas(
-    totalCompletionTokens
+    totalCompletionTokens,
   )} & ${numberWithCommas(totalTotalTokens)} \\\\
   `;
   result += createTableFooter(dirName, runNr);
@@ -173,7 +171,7 @@ if (require.main === module) {
   const lastEntry = pathEntries[pathEntries.length - 1];
   if (!lastEntry.startsWith("run")) {
     throw new Error(
-      "Usage: node <path-to-llmorpheus>/benchmark/generateCostsTable.js <path-to-run>"
+      "Usage: node <path-to-llmorpheus>/benchmark/generateCostsTable.js <path-to-run>",
     );
   }
   const runNr = parseInt(lastEntry.substring(3));

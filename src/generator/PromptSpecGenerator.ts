@@ -19,14 +19,14 @@ export class PromptSpecGenerator {
   private prompts = new Array<Prompt>();
   private promptTemplate: string = fs.readFileSync(
     this.metaInfo.template,
-    "utf8"
+    "utf8",
   );
   constructor(
     private readonly files: string[],
     private readonly packagePath: string,
     private readonly outputDir: string,
     private readonly subDir: string,
-    private readonly metaInfo: MetaInfo
+    private readonly metaInfo: MetaInfo,
   ) {
     Prompt.resetIdCounter();
     this.createPromptSpecs();
@@ -56,7 +56,7 @@ export class PromptSpecGenerator {
       // between "<PLACEHOLDER>" and ")"
       codeWithPlaceholder = codeWithPlaceholder.replace(
         /\(\s*<PLACEHOLDER>\s*\)/g,
-        "(<PLACEHOLDER>)"
+        "(<PLACEHOLDER>)",
       );
       const nrLines = codeWithPlaceholder.split("\n").length;
       if (nrLines > 200) {
@@ -87,7 +87,7 @@ export class PromptSpecGenerator {
     for (let i = 0; i < this.files.length; i++) {
       const file = this.files[i];
       this.promptSpecs.push(
-        ...this.createPromptSpecsForFile(path.join(this.packagePath, file))
+        ...this.createPromptSpecsForFile(path.join(this.packagePath, file)),
       );
     }
   }
@@ -126,10 +126,10 @@ export class PromptSpecGenerator {
         test.loc!.start.line,
         test.loc!.start.column,
         test.loc!.end.line,
-        test.loc!.end.column
+        test.loc!.end.column,
       );
       this.promptSpecs.push(
-        new PromptSpec(file, "if", "test", loc, loc.getText())
+        new PromptSpec(file, "if", "test", loc, loc.getText()),
       );
     }
   }
@@ -142,10 +142,10 @@ export class PromptSpecGenerator {
         discriminant.loc!.start.line,
         discriminant.loc!.start.column,
         discriminant.loc!.end.line,
-        discriminant.loc!.end.column
+        discriminant.loc!.end.column,
       );
       this.promptSpecs.push(
-        new PromptSpec(file, "switch", "discriminant", loc, loc.getText())
+        new PromptSpec(file, "switch", "discriminant", loc, loc.getText()),
       );
     }
   }
@@ -158,10 +158,10 @@ export class PromptSpecGenerator {
         test.loc!.start.line,
         test.loc!.start.column,
         test.loc!.end.line,
-        test.loc!.end.column
+        test.loc!.end.column,
       );
       this.promptSpecs.push(
-        new PromptSpec(file, "while", "test", loc, loc.getText())
+        new PromptSpec(file, "while", "test", loc, loc.getText()),
       );
     }
   }
@@ -174,10 +174,10 @@ export class PromptSpecGenerator {
         test.loc!.start.line,
         test.loc!.start.column,
         test.loc!.end.line,
-        test.loc!.end.column
+        test.loc!.end.column,
       );
       this.promptSpecs.push(
-        new PromptSpec(file, "do-while", "test", loc, loc.getText())
+        new PromptSpec(file, "do-while", "test", loc, loc.getText()),
       );
     }
   }
@@ -202,7 +202,7 @@ export class PromptSpecGenerator {
           init!.loc!.start.line,
           init!.loc!.start.column,
           init!.loc!.end.line,
-          init!.loc!.end.column
+          init!.loc!.end.column,
         );
       } else {
         // if there is no initializer, find the start of the test and look for the position of the semicolon
@@ -228,7 +228,7 @@ export class PromptSpecGenerator {
           initStartLine,
           initStartColumn,
           initEndLine,
-          initEndColumn
+          initEndColumn,
         );
       }
 
@@ -237,7 +237,7 @@ export class PromptSpecGenerator {
         test!.loc!.start.line,
         test!.loc!.start.column,
         test!.loc!.end.line,
-        test!.loc!.end.column
+        test!.loc!.end.column,
       );
 
       if (update) {
@@ -246,7 +246,7 @@ export class PromptSpecGenerator {
           update!.loc!.start.line,
           update!.loc!.start.column,
           update!.loc!.end.line,
-          update!.loc!.end.column
+          update!.loc!.end.column,
         );
       } else {
         // if there is no update, then scan the source code until we find the semicolon
@@ -277,7 +277,7 @@ export class PromptSpecGenerator {
           updateStartLine,
           updateStartColumn,
           updateEndLine,
-          updateEndColumn
+          updateEndColumn,
         );
       }
 
@@ -287,7 +287,7 @@ export class PromptSpecGenerator {
         initLoc.startLine,
         initLoc.startColumn,
         updateLoc.endLine,
-        updateLoc.endColumn
+        updateLoc.endColumn,
       );
 
       const parentLoc = new SourceLocation(
@@ -295,7 +295,7 @@ export class PromptSpecGenerator {
         path.node.loc!.start.line,
         path.node.loc!.start.column,
         path.node.loc!.end.line,
-        path.node.loc!.end.column
+        path.node.loc!.end.column,
       );
       const newPromptSpecs = [
         new PromptSpec(
@@ -304,7 +304,7 @@ export class PromptSpecGenerator {
           "init",
           initLoc,
           initLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
         new PromptSpec(
           file,
@@ -312,7 +312,7 @@ export class PromptSpecGenerator {
           "test",
           testLoc,
           testLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
         new PromptSpec(
           file,
@@ -320,7 +320,7 @@ export class PromptSpecGenerator {
           "update",
           updateLoc,
           updateLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
         new PromptSpec(
           file,
@@ -328,7 +328,7 @@ export class PromptSpecGenerator {
           "header",
           loopHeaderLoc,
           loopHeaderLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
       ];
       this.promptSpecs.push(...newPromptSpecs);
@@ -344,28 +344,28 @@ export class PromptSpecGenerator {
         left!.loc!.start.line,
         left!.loc!.start.column,
         left!.loc!.end.line,
-        left!.loc!.end.column
+        left!.loc!.end.column,
       );
       const rightLoc = new SourceLocation(
         file,
         right!.loc!.start.line,
         right!.loc!.start.column,
         right!.loc!.end.line,
-        right!.loc!.end.column
+        right!.loc!.end.column,
       );
       const loopHeaderLoc = new SourceLocation(
         file,
         left!.loc!.start.line,
         left!.loc!.start.column,
         right!.loc!.end.line,
-        right!.loc!.end.column
+        right!.loc!.end.column,
       );
       const parentLoc = new SourceLocation(
         file,
         path.node.loc!.start.line,
         path.node.loc!.start.column,
         path.node.loc!.end.line,
-        path.node.loc!.end.column
+        path.node.loc!.end.column,
       );
       const newPromptSpecs = [
         new PromptSpec(
@@ -374,7 +374,7 @@ export class PromptSpecGenerator {
           "left",
           leftLoc,
           leftLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
         new PromptSpec(
           file,
@@ -382,7 +382,7 @@ export class PromptSpecGenerator {
           "right",
           rightLoc,
           rightLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
         new PromptSpec(
           file,
@@ -390,7 +390,7 @@ export class PromptSpecGenerator {
           "header",
           loopHeaderLoc,
           loopHeaderLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
       ];
       this.promptSpecs.push(...newPromptSpecs);
@@ -406,28 +406,28 @@ export class PromptSpecGenerator {
         left!.loc!.start.line,
         left!.loc!.start.column,
         left!.loc!.end.line,
-        left!.loc!.end.column
+        left!.loc!.end.column,
       );
       const rightLoc = new SourceLocation(
         file,
         right!.loc!.start.line,
         right!.loc!.start.column,
         right!.loc!.end.line,
-        right!.loc!.end.column
+        right!.loc!.end.column,
       );
       const loopHeaderLoc = new SourceLocation(
         file,
         left!.loc!.start.line,
         left!.loc!.start.column,
         right!.loc!.end.line,
-        right!.loc!.end.column
+        right!.loc!.end.column,
       );
       const parentLoc = new SourceLocation(
         file,
         path.node.loc!.start.line,
         path.node.loc!.start.column,
         path.node.loc!.end.line,
-        path.node.loc!.end.column
+        path.node.loc!.end.column,
       );
       const newPromptSpecs = [
         new PromptSpec(
@@ -436,7 +436,7 @@ export class PromptSpecGenerator {
           "left",
           leftLoc,
           leftLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
         new PromptSpec(file, "for-of", "right", rightLoc, rightLoc.getText()),
         new PromptSpec(
@@ -445,7 +445,7 @@ export class PromptSpecGenerator {
           "header",
           loopHeaderLoc,
           loopHeaderLoc.getText(),
-          parentLoc
+          parentLoc,
         ),
       ];
       this.promptSpecs.push(...newPromptSpecs);
@@ -467,7 +467,7 @@ export class PromptSpecGenerator {
         callee.loc!.start.line,
         callee.loc!.start.column,
         callee.loc!.end.line,
-        callee.loc!.end.column
+        callee.loc!.end.column,
       );
       if (
         calleeLoc.getText() !== "require" &&
@@ -475,7 +475,13 @@ export class PromptSpecGenerator {
       ) {
         // don't mutate calls to require or super-calls
         newPromptSpecs.push(
-          new PromptSpec(file, "call", "callee", calleeLoc, calleeLoc.getText())
+          new PromptSpec(
+            file,
+            "call",
+            "callee",
+            calleeLoc,
+            calleeLoc.getText(),
+          ),
         );
         for (let argNr = 0; argNr < args.length; argNr++) {
           const arg = args[argNr];
@@ -484,7 +490,7 @@ export class PromptSpecGenerator {
             arg.loc!.start.line,
             arg.loc!.start.column,
             arg.loc!.end.line,
-            arg.loc!.end.column
+            arg.loc!.end.column,
           );
           newPromptSpecs.push(
             new PromptSpec(
@@ -492,8 +498,8 @@ export class PromptSpecGenerator {
               "call",
               "arg" + argNr,
               argLoc,
-              argLoc.getText()
-            )
+              argLoc.getText(),
+            ),
           );
         }
         if (args.length === 0) {
@@ -504,7 +510,7 @@ export class PromptSpecGenerator {
             callee.loc!.end.line,
             callee.loc!.end.column + 1,
             loc.end.line,
-            loc.end.column - 1
+            loc.end.column - 1,
           );
           newPromptSpecs.push(
             new PromptSpec(
@@ -512,8 +518,8 @@ export class PromptSpecGenerator {
               "call",
               "allArgs",
               allArgsLoc,
-              allArgsLoc.getText()
-            )
+              allArgsLoc.getText(),
+            ),
           );
         } else if (args.length !== 1) {
           // skip if there is only one argument because then the same placeholder is already created for the first argument
@@ -524,14 +530,14 @@ export class PromptSpecGenerator {
             firstArg.loc!.start.line,
             firstArg.loc!.start.column,
             lastArg.loc!.end.line,
-            lastArg.loc!.end.column
+            lastArg.loc!.end.column,
           );
           const parentLoc = new SourceLocation(
             file,
             path.node.loc!.start.line,
             path.node.loc!.start.column,
             path.node.loc!.end.line,
-            path.node.loc!.end.column
+            path.node.loc!.end.column,
           );
           newPromptSpecs.push(
             new PromptSpec(
@@ -540,8 +546,8 @@ export class PromptSpecGenerator {
               "allArgs",
               allArgsLoc,
               allArgsLoc.getText(),
-              parentLoc
-            )
+              parentLoc,
+            ),
           );
         }
       }
@@ -576,7 +582,7 @@ export class PromptSpecGenerator {
     const fileName = path.join(this.outputDir, this.subDir, "promptSpecs.json");
     fs.writeFileSync(
       path.join(this.outputDir, this.subDir, "promptSpecs.json"),
-      json
+      json,
     );
 
     // write prompts to directory "prompts"
@@ -590,7 +596,7 @@ export class PromptSpecGenerator {
           this.outputDir,
           this.subDir,
           "prompts",
-          `prompt${prompt.getId()}.txt`
+          `prompt${prompt.getId()}.txt`,
         );
         fs.writeFileSync(fileName, prompt.getText());
       }

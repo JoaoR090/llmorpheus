@@ -13,7 +13,7 @@ export class Mutant {
     public replacement: string,
     public readonly promptId: number,
     public readonly completionId: number,
-    public readonly reason: string
+    public readonly reason: string,
   ) {}
 
   public toString() {

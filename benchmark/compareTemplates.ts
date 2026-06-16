@@ -28,7 +28,7 @@ const templates = [
 function findProjectData(baseDir: string, run: string, projectName: string) {
   const data = fs.readFileSync(
     path.join(baseDir, run, "projects", projectName, "StrykerInfo.json"),
-    "utf8"
+    "utf8",
   );
   const info = JSON.parse(data);
   const nrKilled = parseInt(info.nrKilled);
@@ -47,7 +47,7 @@ function computeTotals(baseDir: string, run: string) {
     const { total, nrKilled, nrSurvived, nrTimedout } = findProjectData(
       baseDir,
       run,
-      projectName
+      projectName,
     );
     totalMutants += total;
     totalKilled += nrKilled;
@@ -87,16 +87,30 @@ function generateTable(baseDir: string, runs: string[]): void {
     unzipDirIfNeccessary(path.join(baseDir, run));
   }
 
-  const fullRunNr = runs[0].substring(runs[0].indexOf("run")).replace("run", "run \\#");
-  const oneMutationRunNr = runs[1].substring(runs[1].indexOf("run")).replace("run", "run \\#");
-  const noExplanationRunNr = runs[2].substring(runs[2].indexOf("run")).replace("run", "run \\#");
-  const noInstructionsRunNr = runs[3].substring(runs[3].indexOf("run")).replace("run", "run \\#");
-  const genericSystemPromptRunNr = runs[4].substring(runs[4].indexOf("run")).replace("run", "run \\#");
-  const basicRunNr = runs[5].substring(runs[5].indexOf("run")).replace("run", "run \\#");
+  const fullRunNr = runs[0]
+    .substring(runs[0].indexOf("run"))
+    .replace("run", "run \\#");
+  const oneMutationRunNr = runs[1]
+    .substring(runs[1].indexOf("run"))
+    .replace("run", "run \\#");
+  const noExplanationRunNr = runs[2]
+    .substring(runs[2].indexOf("run"))
+    .replace("run", "run \\#");
+  const noInstructionsRunNr = runs[3]
+    .substring(runs[3].indexOf("run"))
+    .replace("run", "run \\#");
+  const genericSystemPromptRunNr = runs[4]
+    .substring(runs[4].indexOf("run"))
+    .replace("run", "run \\#");
+  const basicRunNr = runs[5]
+    .substring(runs[5].indexOf("run"))
+    .replace("run", "run \\#");
 
   let latexTable = `
 % This table was generated using the following command:
-% node benchmark/compareTemplates.js ${baseDir.substring(baseDir.indexOf("mutation-testing-data"))} ${runs.join(" ")}
+% node benchmark/compareTemplates.js ${baseDir.substring(
+    baseDir.indexOf("mutation-testing-data"),
+  )} ${runs.join(" ")}
 \\begin{table*}
 \\centering
 {\\scriptsize
@@ -122,7 +136,7 @@ function generateTable(baseDir: string, runs: string[]): void {
     for (const run of runs) {
       const data = fs.readFileSync(
         path.join(baseDir, run, projectName, "StrykerInfo.json"),
-        "utf8"
+        "utf8",
       );
       const info = JSON.parse(data);
       const nrKilled = info.nrKilled;
@@ -165,7 +179,9 @@ function generateTable(baseDir: string, runs: string[]): void {
     "\\end{tabular}\n" +
     "}\n" +
     "\\caption{Number of mutants generated using the \\CodeLlamaThirtyFour LLM at temperature 0.0" +
-    ` using templates ${templates.join(", ")} \\ChangedText{(showing one run of each)}.}\n` +
+    ` using templates ${templates.join(
+      ", ",
+    )} \\ChangedText{(showing one run of each)}.}\n` +
     "\\label{table:Templates}\n" +
     "\\end{table*}\n";
   console.log(latexTable);

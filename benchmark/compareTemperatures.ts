@@ -49,11 +49,11 @@ function generateTable(baseDir: string, runs: string[]): void {
   const runNrs = runs.map((path) =>
     path
       .substring(path.lastIndexOf("run"), path.length)
-      .replace("run", "run \\#")
+      .replace("run", "run \\#"),
   );
   let latexTable = `
 % This table was generated using command: "node benchmark/compareTemperatures.js ${baseDir} ${runs.join(
-    " "
+    " ",
   )}
 \\begin{table*}
 \\centering
@@ -74,16 +74,19 @@ function generateTable(baseDir: string, runs: string[]): void {
     &  \\Total & \\Killed & \\Survived & \\Timeout  \\\\
 \\hline
 \\hline`;
-  
+
   // add map from run to { total, killed, survived, timeout }
-  const runToInfo = new Map<string, { total: number, killed: number, survived: number, timeout: number }>();
+  const runToInfo = new Map<
+    string,
+    { total: number; killed: number; survived: number; timeout: number }
+  >();
 
   for (const projectName of projectNames) {
     let row = "\\textit{" + projectName + "}";
     for (const run of runs) {
       const data = fs.readFileSync(
         path.join(baseDir, run, "projects", projectName, "StrykerInfo.json"),
-        "utf8"
+        "utf8",
       );
       const info = JSON.parse(data);
       const nrKilled = info.nrKilled;
@@ -101,7 +104,7 @@ function generateTable(baseDir: string, runs: string[]): void {
         " & " +
         numberWithCommas(nrTimedout);
     }
-    row += " \\\\\n\\\hline\n";
+    row += " \\\\\n\\hline\n";
     latexTable += row;
   }
 
@@ -114,15 +117,19 @@ function generateTable(baseDir: string, runs: string[]): void {
       runToInfo.set(run, data);
     }
     for (const projectName of projectNames) {
-      const info = JSON.parse(fs.readFileSync(
-        path.join(baseDir, run, "projects", projectName, "StrykerInfo.json"),
-        "utf8"
-      ));
+      const info = JSON.parse(
+        fs.readFileSync(
+          path.join(baseDir, run, "projects", projectName, "StrykerInfo.json"),
+          "utf8",
+        ),
+      );
       data!.killed += parseInt(info.nrKilled);
       data!.survived += parseInt(info.nrSurvived);
       data!.timeout += parseInt(info.nrTimedOut);
-      data!.total  +=
-        parseInt(info.nrKilled) + parseInt(info.nrSurvived) + parseInt(info.nrTimedOut);
+      data!.total +=
+        parseInt(info.nrKilled) +
+        parseInt(info.nrSurvived) +
+        parseInt(info.nrTimedOut);
     }
     row +=
       " & " +

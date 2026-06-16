@@ -6,7 +6,7 @@ import { IQueryResult } from "./IQueryResult";
 export interface IModel {
   query(
     prompt: string,
-    requestPostOptions?: PostOptions
+    requestPostOptions?: PostOptions,
   ): Promise<IQueryResult>;
   getModelName(): string;
   getTemperature(): number;

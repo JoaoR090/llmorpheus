@@ -29,7 +29,7 @@ export class MutantGenerator {
     private model: IModel,
     private outputDir: string,
     private packagePath: string,
-    private metaInfo: MetaInfo
+    private metaInfo: MetaInfo,
   ) {
     this.createOutputFilesDirectory();
   }
@@ -47,18 +47,18 @@ export class MutantGenerator {
     }
     if (
       fs.existsSync(
-        path.join(this.outputDir, this.getSubDirName(), "/mutants.json")
+        path.join(this.outputDir, this.getSubDirName(), "/mutants.json"),
       )
     ) {
       fs.unlinkSync(
-        path.join(this.outputDir, this.getSubDirName(), "/mutants.json")
+        path.join(this.outputDir, this.getSubDirName(), "/mutants.json"),
       );
     }
     if (
       fs.existsSync(path.join(this.outputDir, this.getSubDirName(), "/log.txt"))
     ) {
       fs.unlinkSync(
-        path.join(this.outputDir, this.getSubDirName(), "/log.txt")
+        path.join(this.outputDir, this.getSubDirName(), "/log.txt"),
       );
     }
     if (
@@ -66,23 +66,23 @@ export class MutantGenerator {
     ) {
       fs.rmdirSync(
         path.join(this.outputDir, this.getSubDirName(), "/prompts"),
-        { recursive: true }
+        { recursive: true },
       );
     }
     fs.writeFileSync(
       path.join(this.outputDir, this.getSubDirName(), "/log.txt"),
-      ""
+      "",
     );
     fs.mkdirSync(path.join(this.outputDir, this.getSubDirName(), "prompts"));
   }
 
   public getSubDirName(): string {
     const shortFileName = this.metaInfo.template.substring(
-      this.metaInfo.template.lastIndexOf("/") + 1
+      this.metaInfo.template.lastIndexOf("/") + 1,
     );
     const shortTemplateFileName = shortFileName.substring(
       0,
-      shortFileName.lastIndexOf(".")
+      shortFileName.lastIndexOf("."),
     );
     const tempAsString =
       this.metaInfo.temperature === 0
@@ -106,7 +106,7 @@ export class MutantGenerator {
   private log(msg: string): void {
     fs.appendFileSync(
       path.join(this.outputDir, this.getSubDirName(), "/log.txt"),
-      msg
+      msg,
     );
   }
 
@@ -123,7 +123,7 @@ export class MutantGenerator {
     const files: string[] = await this.expandGlob(
       this.packagePath,
       this.metaInfo.mutate,
-      this.metaInfo.ignore
+      this.metaInfo.ignore,
     );
     console.log(`found ${files.length} files to mutate`);
     return files;
@@ -132,7 +132,7 @@ export class MutantGenerator {
   private async expandGlob(
     dirName: string,
     glob: string,
-    ignore: string | undefined
+    ignore: string | undefined,
   ): Promise<string[]> {
     dirName = dirName.trim();
     if (dirName.endsWith("/")) {
@@ -195,7 +195,7 @@ export class MutantGenerator {
 
   private isReplaceNonRegExpWithRegExp(
     original: string,
-    substitution: string
+    substitution: string,
   ): boolean {
     return (
       !this.isRegExpLiteral(original) && this.isRegExpLiteral(substitution)
@@ -259,17 +259,17 @@ export class MutantGenerator {
    */
   public async generateMutants(): Promise<void> {
     this.printAndLog(
-      `Starting generation of mutants on: ${new Date().toUTCString()}\n\n`
+      `Starting generation of mutants on: ${new Date().toUTCString()}\n\n`,
     );
     const files = await this.findSourceFilesToMutate();
 
     const filesWithoutProjectPath = files.map((file) =>
-      file.replace(this.packagePath, "")
+      file.replace(this.packagePath, ""),
     );
     this.printAndLog(
       `generating mutants for the following files: ${filesWithoutProjectPath.join(
-        ","
-      )}\n`
+        ",",
+      )}\n`,
     );
 
     const generator = new PromptSpecGenerator(
@@ -277,7 +277,7 @@ export class MutantGenerator {
       this.packagePath,
       this.outputDir,
       this.getSubDirName(),
-      this.metaInfo
+      this.metaInfo,
     );
     generator.writePromptFiles();
 
@@ -287,7 +287,7 @@ export class MutantGenerator {
         this.printAndLog(
           `processing prompt ${prompt.getId()}/${
             generator.getPrompts().length
-          }\n`
+          }\n`,
         );
       }
       await this.generateMutantsFromPrompt(prompt, mutants);
@@ -304,15 +304,20 @@ export class MutantGenerator {
   private removeRedundantArgs(substitution: string, prompt: Prompt): string {
     if (prompt.spec.isCalleePlaceHolder()) {
       if (substitution.indexOf("(") !== -1) {
-        const args = substitution.substring(substitution.indexOf("("), substitution.lastIndexOf(")")+1);
+        const args = substitution.substring(
+          substitution.indexOf("("),
+          substitution.lastIndexOf(")") + 1,
+        );
         const codeWithPlaceHolder = prompt.spec.getCodeWithPlaceholder();
         const indexOfPlaceholder = codeWithPlaceHolder.indexOf("<PLACEHOLDER>");
-        const codeAfterPlaceholder = codeWithPlaceHolder.substring(indexOfPlaceholder + "<PLACEHOLDER>".length);
+        const codeAfterPlaceholder = codeWithPlaceHolder.substring(
+          indexOfPlaceholder + "<PLACEHOLDER>".length,
+        );
         if (codeAfterPlaceholder.startsWith(args)) {
           const oldSubstitution = substitution;
           substitution = substitution.substring(0, substitution.indexOf("("));
         }
-      }  
+      }
     }
     return substitution;
   }
@@ -331,9 +336,9 @@ export class MutantGenerator {
         fs.writeFileSync(
           `${path.join(
             this.outputDir,
-            this.getSubDirName()
+            this.getSubDirName(),
           )}/prompts/prompt${prompt.getId()}_completion_${completion.getId()}.txt`,
-          completion.text
+          completion.text,
         );
         // const regExp = /```\n((?:.(?!```))*)\n```/gs;
         const regExp = /```[^\n\r]*\n((?:.(?!```))*)\n```/gs;
@@ -341,7 +346,6 @@ export class MutantGenerator {
 
         while ((match = regExp.exec(completion.text)) !== null) {
           let substitution = this.removeRedundantArgs(match[1], prompt);
-          
 
           if (substitution === prompt.getOrig()) {
             this.mutationStats.nrIdentical++;
@@ -354,7 +358,7 @@ export class MutantGenerator {
           } else {
             const candidateMutant = this.createCandidateMutant(
               prompt,
-              substitution
+              substitution,
             );
             if (prompt.spec.isExpressionPlaceholder()) {
               this.handleExpression(substitution, prompt, completion, mutants);
@@ -374,7 +378,7 @@ export class MutantGenerator {
                 prompt,
                 substitution,
                 completion,
-                mutants
+                mutants,
               );
             } else {
               // statement placeholder
@@ -383,7 +387,7 @@ export class MutantGenerator {
                 prompt,
                 substitution,
                 completion,
-                mutants
+                mutants,
               );
             }
           }
@@ -416,19 +420,19 @@ export class MutantGenerator {
     const nrLocations = locations.length;
 
     this.printAndLog(
-      `discarding ${this.mutationStats.nrSyntacticallyInvalid} syntactically invalid mutants\n`
+      `discarding ${this.mutationStats.nrSyntacticallyInvalid} syntactically invalid mutants\n`,
     );
     this.printAndLog(
-      `discarding ${this.mutationStats.nrIdentical} mutant candidates that are identical to the original code\n`
+      `discarding ${this.mutationStats.nrIdentical} mutant candidates that are identical to the original code\n`,
     );
     this.printAndLog(
-      `discarding ${this.mutationStats.nrDuplicate} duplicate mutants\n`
+      `discarding ${this.mutationStats.nrDuplicate} duplicate mutants\n`,
     );
 
     const mutantsFileName = path.join(
       this.outputDir,
       this.getSubDirName(),
-      "mutants.json"
+      "mutants.json",
     );
     fs.writeFileSync(mutantsFileName, JSON.stringify(mutants, null, 2));
 
@@ -436,7 +440,7 @@ export class MutantGenerator {
     const resultsFileName = path.join(
       this.outputDir,
       this.getSubDirName(),
-      "summary.json"
+      "summary.json",
     );
     const nrPrompts = this.promptCnt;
     const nrSyntacticallyValid = this.mutationStats.nrSyntacticallyValid;
@@ -464,14 +468,14 @@ export class MutantGenerator {
           nrFailures,
         },
         null,
-        2
-      )
+        2,
+      ),
     );
     console.log(`nrRetries = ${nrRetries}, nrFailures = ${nrFailures}`);
     console.log(`summary written to  ${resultsFileName}\n`);
 
     this.printAndLog(
-      `wrote ${nrSyntacticallyValid} mutants in ${nrLocations} locations to ${mutantsFileName}\n`
+      `wrote ${nrSyntacticallyValid} mutants in ${nrLocations} locations to ${mutantsFileName}\n`,
     );
   }
 
@@ -482,7 +486,7 @@ export class MutantGenerator {
     substitution: string,
     prompt: Prompt,
     completion: Completion,
-    mutants: Mutant[]
+    mutants: Mutant[],
   ) {
     try {
       parser.parseExpression(substitution);
@@ -496,7 +500,7 @@ export class MutantGenerator {
         substitution,
         prompt.getId(),
         completion.getId(),
-        prompt.spec.feature + "/" + prompt.spec.component
+        prompt.spec.feature + "/" + prompt.spec.component,
       );
 
       if (!this.isDuplicate(mutant, mutants)) {
@@ -521,13 +525,13 @@ export class MutantGenerator {
     prompt: Prompt,
     substitution: string,
     completion: Completion,
-    mutants: Mutant[]
+    mutants: Mutant[],
   ) {
     try {
       const expandedOrig = prompt.spec.parentLocation!.getText();
       const expandedSubstitution = expandedOrig.replace(
         prompt.getOrig(),
-        substitution
+        substitution,
       );
       parser.parse(expandedSubstitution, {
         sourceType: "module",
@@ -544,7 +548,7 @@ export class MutantGenerator {
         expandedSubstitution,
         prompt.getId(),
         completion.getId(),
-        prompt.spec.feature + "/" + prompt.spec.component
+        prompt.spec.feature + "/" + prompt.spec.component,
       );
       if (!this.isDuplicate(mutant, mutants)) {
         mutants.push(mutant);
@@ -565,7 +569,7 @@ export class MutantGenerator {
     prompt: Prompt,
     substitution: string,
     completion: Completion,
-    mutants: Mutant[]
+    mutants: Mutant[],
   ) {
     try {
       parser.parse(candidateMutant, {
@@ -583,7 +587,7 @@ export class MutantGenerator {
         substitution,
         prompt.getId(),
         completion.getId(),
-        prompt.spec.feature + "/" + prompt.spec.component
+        prompt.spec.feature + "/" + prompt.spec.component,
       );
       if (!this.isDuplicate(mutant, mutants)) {
         mutants.push(mutant);
@@ -605,7 +609,7 @@ export class MutantGenerator {
     this.mutationStats.totalTokens += queryResult.total_tokens;
 
     return completions.map(
-      (completionText) => new Completion(completionText, prompt.getId())
+      (completionText) => new Completion(completionText, prompt.getId()),
     );
   }
 }

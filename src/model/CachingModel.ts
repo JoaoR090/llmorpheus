@@ -14,7 +14,7 @@ export class CachingModel implements IModel {
   constructor(
     private model: IModel,
     private cacheDir: string,
-    private instanceOptions: PostOptions = {}
+    private instanceOptions: PostOptions = {},
   ) {
     this.modelName = `${model.getModelName()}`;
     console.log(`Using cache dir: ${cacheDir}`);
@@ -36,7 +36,7 @@ export class CachingModel implements IModel {
 
   public async query(
     prompt: string,
-    requestPostOptions: PostOptions = {}
+    requestPostOptions: PostOptions = {},
   ): Promise<IQueryResult> {
     const options: PostOptions = {
       ...defaultPostOptions,
@@ -59,7 +59,7 @@ export class CachingModel implements IModel {
     const cacheDir = path.join(
       this.cacheDir,
       this.model.getModelName(),
-      hash.slice(0, 2)
+      hash.slice(0, 2),
     );
     const cacheFile = path.join(cacheDir, hash);
 

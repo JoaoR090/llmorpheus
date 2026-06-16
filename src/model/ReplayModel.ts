@@ -45,11 +45,11 @@ export class ReplayModel implements IModel {
             if (match2[1] === match[1]) {
               const prompt = fs.readFileSync(
                 path.join(this.dirName, "prompts", file),
-                "utf8"
+                "utf8",
               );
               const completion = fs.readFileSync(
                 path.join(this.dirName, "prompts", file2),
-                "utf8"
+                "utf8",
               );
               this.promptToCompletionMap.set(prompt, completion);
               nrCompletions++;
@@ -59,7 +59,7 @@ export class ReplayModel implements IModel {
       }
     }
     console.log(
-      `*** retrieved ${nrPrompts} prompts and ${nrCompletions} completions`
+      `*** retrieved ${nrPrompts} prompts and ${nrCompletions} completions`,
     );
   }
 
@@ -67,7 +67,7 @@ export class ReplayModel implements IModel {
     prompt: string,
     requestPostOptions?:
       | Partial<{ max_tokens: number; temperature: number; top_p: number }>
-      | undefined
+      | undefined,
   ): Promise<IQueryResult> {
     const completion = this.promptToCompletionMap.get(prompt);
     const result: IQueryResult = {

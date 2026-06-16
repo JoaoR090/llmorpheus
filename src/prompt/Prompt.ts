@@ -34,7 +34,7 @@ export class Prompt {
         const origStartLine = this.spec.location.startLine;
         const origEndLine = this.spec.location.endLine;
         const isInRange = metaInfo.mutateOnlyLines.some(
-          (line) => line >= origStartLine && line <= origEndLine
+          (line) => line >= origStartLine && line <= origEndLine,
         );
         return !isInRange;
       }
@@ -46,7 +46,7 @@ export class Prompt {
         const origStartLine = this.spec.location.startLine;
         const origEndLine = this.spec.location.endLine;
         const isInRange = metaInfo.mutateOnlyLines.some(
-          (line) => line >= origStartLine && line <= origEndLine
+          (line) => line >= origStartLine && line <= origEndLine,
         );
         return !isInRange;
       }

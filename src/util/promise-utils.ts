@@ -8,7 +8,7 @@
 export async function retry<T>(
   f: () => Promise<T>,
   howManyTimes: number,
-  notifyFun: () => void
+  notifyFun: () => void,
 ): Promise<T> {
   let i = 1;
   let promise: Promise<T> = f(); // create the promise, but don't wait for its fulfillment yet..
@@ -96,7 +96,7 @@ export class BenchmarkRateLimiter extends RateLimiter {
 
   constructor() {
     console.log(
-      `BenchmarkRateLimiter: initial pace is ${BenchmarkRateLimiter.INITIAL_PACE}`
+      `BenchmarkRateLimiter: initial pace is ${BenchmarkRateLimiter.INITIAL_PACE}`,
     );
     super(BenchmarkRateLimiter.INITIAL_PACE);
     this.requestCount = 0;
@@ -107,12 +107,12 @@ export class BenchmarkRateLimiter extends RateLimiter {
     if (this.requestCount === 150) {
       this.howManyMilliSeconds = BenchmarkRateLimiter.PACE_AFTER_150_REQUESTS;
       console.log(
-        `BenchmarkRateLimiter: increasing pace to ${BenchmarkRateLimiter.PACE_AFTER_150_REQUESTS}`
+        `BenchmarkRateLimiter: increasing pace to ${BenchmarkRateLimiter.PACE_AFTER_150_REQUESTS}`,
       );
     } else if (this.requestCount === 300) {
       this.howManyMilliSeconds = BenchmarkRateLimiter.PACE_AFTER_300_REQUESTS;
       console.log(
-        `BenchmarkRateLimiter: increasing pace to ${BenchmarkRateLimiter.PACE_AFTER_300_REQUESTS}`
+        `BenchmarkRateLimiter: increasing pace to ${BenchmarkRateLimiter.PACE_AFTER_300_REQUESTS}`,
       );
     }
     return super.next(p);

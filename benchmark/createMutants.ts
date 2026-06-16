@@ -163,13 +163,13 @@ if (require.main === module) {
       const baseModel = new Model(
         argv.model,
         { temperature: argv.temperature, max_tokens: argv.maxTokens },
-        metaInfo
+        metaInfo,
       );
       model = argv.caching
         ? new CachingModel(baseModel, argv.cacheDir)
         : baseModel;
       console.log(
-        `*** Generating mutants for ${argv.mutate} in ${packagePath}`
+        `*** Generating mutants for ${argv.mutate} in ${packagePath}`,
       );
     }
 
@@ -177,7 +177,7 @@ if (require.main === module) {
       model,
       path.join(argv.path, "MUTATION_TESTING"),
       packagePath,
-      metaInfo
+      metaInfo,
     );
     mutantGenerator.generateMutants();
   })();

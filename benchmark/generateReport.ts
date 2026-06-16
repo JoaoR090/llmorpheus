@@ -8,7 +8,7 @@ function printReport(title: string) {
   const firstBenchmarkName = results[0];
   const firstBenchmarkFile = fs.readFileSync(
     `${dirName}/${firstBenchmarkName}/MUTATION_TESTING/summary.json`,
-    "utf8"
+    "utf8",
   );
   const firstSummary = JSON.parse(firstBenchmarkFile);
   const modelName = firstSummary.metaInfo.modelName;
@@ -28,14 +28,14 @@ function printReport(title: string) {
     // read summary.json file in benchmarkName/MUTATION_TESTING
     const file = fs.readFileSync(
       `${dirName}/${benchmarkName}/MUTATION_TESTING/summary.json`,
-      "utf8"
+      "utf8",
     );
     const summary = JSON.parse(file);
     const nrCandidates = summary.nrCandidates;
     const nrSyntacticallyValid = summary.nrSyntacticallyValid;
     const nrLocations = summary.nrLocations;
     console.log(
-      `${benchmarkName} | ${nrCandidates} | ${nrSyntacticallyValid} | ${nrLocations}`
+      `${benchmarkName} | ${nrCandidates} | ${nrSyntacticallyValid} | ${nrLocations}`,
     );
   }
 }

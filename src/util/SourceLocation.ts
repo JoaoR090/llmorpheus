@@ -11,7 +11,7 @@ export class SourceLocation {
     public readonly startLine: number,
     public readonly startColumn: number,
     public readonly endLine: number,
-    public readonly endColumn: number
+    public readonly endColumn: number,
   ) {}
   public getText() {
     const code = fs.readFileSync(this.file, "utf8");

@@ -18,10 +18,10 @@ import { MetaInfo } from "../generator/MetaInfo";
  */
 export class Model implements IModel {
   protected static LLMORPHEUS_LLM_API_ENDPOINT = getEnv(
-    "LLMORPHEUS_LLM_API_ENDPOINT"
+    "LLMORPHEUS_LLM_API_ENDPOINT",
   );
   protected static LLMORPHEUS_LLM_AUTH_HEADERS = JSON.parse(
-    getEnv("LLMORPHEUS_LLM_AUTH_HEADERS")
+    getEnv("LLMORPHEUS_LLM_AUTH_HEADERS"),
   );
 
   protected static LLMORPHEUS_LLM_PROVIDER = Model.getLLMProvider();
@@ -42,7 +42,7 @@ export class Model implements IModel {
   constructor(
     private modelName: string,
     instanceOptions: PostOptions = {},
-    private metaInfo: MetaInfo
+    private metaInfo: MetaInfo,
   ) {
     this.instanceOptions = instanceOptions;
     if (metaInfo.benchmark) {
@@ -54,14 +54,14 @@ export class Model implements IModel {
       console.log(
         `*** Using ${this.getModelName()} with rate limit: ${
           metaInfo.rateLimit
-        } and ${metaInfo.nrAttempts} attempts`
+        } and ${metaInfo.nrAttempts} attempts`,
       );
     } else {
       this.rateLimiter = new FixedRateLimiter(0);
       console.log(
         `*** Using ${this.getModelName()} with no rate limit and ${
           metaInfo.nrAttempts
-        } attempts`
+        } attempts`,
       );
     }
   }
@@ -93,7 +93,7 @@ export class Model implements IModel {
    */
   public async query(
     prompt: string,
-    requestPostOptions: PostOptions = {}
+    requestPostOptions: PostOptions = {},
   ): Promise<IQueryResult> {
     const options: PostOptions = {
       ...defaultPostOptions,
@@ -105,7 +105,7 @@ export class Model implements IModel {
 
     const systemPrompt = fs.readFileSync(
       `templates/${this.metaInfo.systemPrompt}`,
-      "utf8"
+      "utf8",
     );
     let body = {
       model: this.getModelName(),
@@ -131,12 +131,12 @@ export class Model implements IModel {
           this.rateLimiter.next(() =>
             axios.post(Model.LLMORPHEUS_LLM_API_ENDPOINT, body, {
               headers: Model.LLMORPHEUS_LLM_AUTH_HEADERS,
-            })
+            }),
           ),
         this.metaInfo.nrAttempts,
         () => {
           this.counter.nrRetries++;
-        }
+        },
       );
     } catch (e) {
       if (res?.status === 429) {
@@ -151,11 +151,11 @@ export class Model implements IModel {
         ...options,
         promptLength: prompt.length,
       })}`,
-      "llm-query-start"
+      "llm-query-start",
     );
     if (res.status !== 200) {
       throw new Error(
-        `Request failed with status ${res.status} and message ${res.statusText}`
+        `Request failed with status ${res.status} and message ${res.statusText}`,
       );
     }
     if (!res.data) {
@@ -166,7 +166,7 @@ export class Model implements IModel {
     const completion_tokens = res.data.usage.completion_tokens;
     const total_tokens = res.data.usage.total_tokens;
     console.log(
-      `*** prompt tokens: ${prompt_tokens}, completion tokens: ${completion_tokens}, total tokens: ${total_tokens}`
+      `*** prompt tokens: ${prompt_tokens}, completion tokens: ${completion_tokens}, total tokens: ${total_tokens}`,
     );
 
     const completions = new Set<string>();

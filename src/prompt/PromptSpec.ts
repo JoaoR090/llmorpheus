@@ -22,7 +22,7 @@ export class PromptSpec {
     public readonly component: string,
     public readonly location: SourceLocation,
     public readonly orig: string,
-    public readonly parentLocation?: SourceLocation
+    public readonly parentLocation?: SourceLocation,
   ) {
     this.findReferences();
   }
@@ -43,7 +43,7 @@ export class PromptSpec {
         this.location.endLine,
         this.location.endColumn,
         lastLine,
-        endColumnOfLastLine
+        endColumnOfLastLine,
       );
     return codeWithPlaceHolder;
   }
@@ -66,7 +66,7 @@ export class PromptSpec {
             path.node.loc!.start.line,
             path.node.loc!.start.column,
             path.node.loc!.end.line,
-            path.node.loc!.end.column
+            path.node.loc!.end.column,
           );
           if (loc.containedIn(outerThis.location)) {
             outerThis.references.add(path.node.name);
@@ -77,7 +77,7 @@ export class PromptSpec {
   }
 
   public addOriginalCodeAsCommentAtEndOfLineContainingPlaceholder(
-    codeWithPlaceHolder: string
+    codeWithPlaceHolder: string,
   ): string {
     const lines = codeWithPlaceHolder.split("\n");
     const lineNr = this.location.startLine - 1;
