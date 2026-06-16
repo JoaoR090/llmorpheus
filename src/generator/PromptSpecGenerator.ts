@@ -118,7 +118,7 @@ export class PromptSpecGenerator {
         outerThis.createPromptSpecsForCall(file, path);
       },
     });
-    console.log("Created Prompt Specs:\n");
+    console.log("Created Prompt Specs for file:\n");
     console.log(promptSpecs);
     console.log("\n\n");
     return promptSpecs;
