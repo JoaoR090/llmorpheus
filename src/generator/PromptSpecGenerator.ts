@@ -89,6 +89,9 @@ export class PromptSpecGenerator {
       this.promptSpecs.push(
         ...this.createPromptSpecsForFile(path.join(this.packagePath, file)),
       );
+      console.log("Created Prompt Specs:\n");
+      console.log(this.promptSpecs);
+      console.log("\n\n");
     }
   }
 
@@ -115,6 +118,9 @@ export class PromptSpecGenerator {
         outerThis.createPromptSpecsForCall(file, path);
       },
     });
+    console.log("Created Prompt Specs:\n");
+    console.log(promptSpecs);
+    console.log("\n\n");
     return promptSpecs;
   }
 
