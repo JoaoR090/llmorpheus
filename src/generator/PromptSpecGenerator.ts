@@ -117,9 +117,26 @@ export class PromptSpecGenerator {
         outerThis.createPromptSpecsForForIn(file, path);
         outerThis.createPromptSpecsForForOf(file, path);
         outerThis.createPromptSpecsForCall(file, path);
+        outerThis.createPromptSpecsForFloat(file, path);
       },
     });
     return promptSpecs;
+  }
+
+  private createPromptSpecsForFloat(file: string, path: any): void {
+    if (path.isNumericLiteral() && path.node.extra.raw.includes(".")) {
+      const number = path.node;
+      const loc = new SourceLocation(
+        file,
+        number.loc!.start.line,
+        number.loc!.start.column,
+        number.loc!.end.line,
+        number.loc!.end.column,
+      );
+      this.promptSpecs.push(
+        new PromptSpec(file, "number", "number", loc, loc.getText()),
+      );
+    }
   }
 
   private createPromptSpecForIf(file: string, path: any): void {
