@@ -1,0 +1,2238 @@
+
+Node {
+  type: 'Program',
+  start: 0,
+  end: 470,
+  loc: SourceLocation {
+    start: Position { line: 1, column: 0, index: 0 },
+    end: Position { line: 37, column: 0, index: 470 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  sourceType: 'module',
+  interpreter: null,
+  body: [
+    Node {
+      type: 'VariableDeclaration',
+      start: 0,
+      end: 20,
+      loc: [SourceLocation],
+      declarations: [Array],
+      kind: 'const'
+    },
+    Node {
+      type: 'VariableDeclaration',
+      start: 21,
+      end: 38,
+      loc: [SourceLocation],
+      declarations: [Array],
+      kind: 'const'
+    },
+    Node {
+      type: 'VariableDeclaration',
+      start: 40,
+      end: 88,
+      loc: [SourceLocation],
+      declarations: [Array],
+      kind: 'const'
+    },
+    Node {
+      type: 'FunctionDeclaration',
+      start: 90,
+      end: 208,
+      loc: [SourceLocation],
+      id: [Node],
+      generator: false,
+      async: false,
+      params: [Array],
+      returnType: [Node],
+      body: [Node]
+    },
+    Node {
+      type: 'ForStatement',
+      start: 210,
+      end: 259,
+      loc: [SourceLocation],
+      init: [Node],
+      test: [Node],
+      update: [Node],
+      body: [Node]
+    },
+    Node {
+      type: 'WhileStatement',
+      start: 261,
+      end: 291,
+      loc: [SourceLocation],
+      test: [Node],
+      body: [Node]
+    },
+    Node {
+      type: 'ForInStatement',
+      start: 293,
+      end: 346,
+      loc: [SourceLocation],
+      left: [Node],
+      right: [Node],
+      body: [Node]
+    },
+    Node {
+      type: 'SwitchStatement',
+      start: 348,
+      end: 469,
+      loc: [SourceLocation],
+      discriminant: [Node],
+      cases: [Array]
+    }
+  ],
+  directives: [],
+  extra: { topLevelAwait: false }
+}
+Node {
+  type: 'VariableDeclaration',
+  start: 0,
+  end: 20,
+  loc: SourceLocation {
+    start: Position { line: 1, column: 0, index: 0 },
+    end: Position { line: 1, column: 20, index: 20 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  declarations: [
+    Node {
+      type: 'VariableDeclarator',
+      start: 6,
+      end: 19,
+      loc: [SourceLocation],
+      id: [Node],
+      init: [Node]
+    }
+  ],
+  kind: 'const'
+}
+Node {
+  type: 'VariableDeclarator',
+  start: 6,
+  end: 19,
+  loc: SourceLocation {
+    start: Position { line: 1, column: 6, index: 6 },
+    end: Position { line: 1, column: 19, index: 19 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  id: Node {
+    type: 'Identifier',
+    start: 6,
+    end: 10,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'nome'
+    },
+    name: 'nome'
+  },
+  init: Node {
+    type: 'StringLiteral',
+    start: 13,
+    end: 19,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 'João', raw: '"João"' },
+    value: 'João'
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 6,
+  end: 10,
+  loc: SourceLocation {
+    start: Position { line: 1, column: 6, index: 6 },
+    end: Position { line: 1, column: 10, index: 10 },
+    filename: undefined,
+    identifierName: 'nome'
+  },
+  name: 'nome'
+}
+Node {
+  type: 'StringLiteral',
+  start: 13,
+  end: 19,
+  loc: SourceLocation {
+    start: Position { line: 1, column: 13, index: 13 },
+    end: Position { line: 1, column: 19, index: 19 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 'João', raw: '"João"' },
+  value: 'João'
+}
+Node {
+  type: 'VariableDeclaration',
+  start: 21,
+  end: 38,
+  loc: SourceLocation {
+    start: Position { line: 2, column: 0, index: 21 },
+    end: Position { line: 2, column: 17, index: 38 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  declarations: [
+    Node {
+      type: 'VariableDeclarator',
+      start: 27,
+      end: 37,
+      loc: [SourceLocation],
+      id: [Node],
+      init: [Node]
+    }
+  ],
+  kind: 'const'
+}
+Node {
+  type: 'VariableDeclarator',
+  start: 27,
+  end: 37,
+  loc: SourceLocation {
+    start: Position { line: 2, column: 6, index: 27 },
+    end: Position { line: 2, column: 16, index: 37 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  id: Node {
+    type: 'Identifier',
+    start: 27,
+    end: 32,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'idade'
+    },
+    name: 'idade'
+  },
+  init: Node {
+    type: 'NumericLiteral',
+    start: 35,
+    end: 37,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 20, raw: '20' },
+    value: 20
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 27,
+  end: 32,
+  loc: SourceLocation {
+    start: Position { line: 2, column: 6, index: 27 },
+    end: Position { line: 2, column: 11, index: 32 },
+    filename: undefined,
+    identifierName: 'idade'
+  },
+  name: 'idade'
+}
+Node {
+  type: 'NumericLiteral',
+  start: 35,
+  end: 37,
+  loc: SourceLocation {
+    start: Position { line: 2, column: 14, index: 35 },
+    end: Position { line: 2, column: 16, index: 37 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 20, raw: '20' },
+  value: 20
+}
+Node {
+  type: 'VariableDeclaration',
+  start: 40,
+  end: 88,
+  loc: SourceLocation {
+    start: Position { line: 4, column: 0, index: 40 },
+    end: Position { line: 7, column: 2, index: 88 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  declarations: [
+    Node {
+      type: 'VariableDeclarator',
+      start: 46,
+      end: 87,
+      loc: [SourceLocation],
+      id: [Node],
+      init: [Node]
+    }
+  ],
+  kind: 'const'
+}
+Node {
+  type: 'VariableDeclarator',
+  start: 46,
+  end: 87,
+  loc: SourceLocation {
+    start: Position { line: 4, column: 6, index: 46 },
+    end: Position { line: 7, column: 1, index: 87 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  id: Node {
+    type: 'Identifier',
+    start: 46,
+    end: 52,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'pessoa'
+    },
+    name: 'pessoa'
+  },
+  init: Node {
+    type: 'ObjectExpression',
+    start: 55,
+    end: 87,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    properties: [ [Node], [Node] ],
+    extra: { trailingComma: 84 }
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 46,
+  end: 52,
+  loc: SourceLocation {
+    start: Position { line: 4, column: 6, index: 46 },
+    end: Position { line: 4, column: 12, index: 52 },
+    filename: undefined,
+    identifierName: 'pessoa'
+  },
+  name: 'pessoa'
+}
+Node {
+  type: 'ObjectExpression',
+  start: 55,
+  end: 87,
+  loc: SourceLocation {
+    start: Position { line: 4, column: 15, index: 55 },
+    end: Position { line: 7, column: 1, index: 87 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  properties: [
+    Node {
+      type: 'ObjectProperty',
+      start: 59,
+      end: 71,
+      loc: [SourceLocation],
+      method: false,
+      key: [Node],
+      computed: false,
+      shorthand: false,
+      value: [Node]
+    },
+    Node {
+      type: 'ObjectProperty',
+      start: 75,
+      end: 84,
+      loc: [SourceLocation],
+      method: false,
+      key: [Node],
+      computed: false,
+      shorthand: false,
+      value: [Node]
+    }
+  ],
+  extra: { trailingComma: 84 }
+}
+Node {
+  type: 'ObjectProperty',
+  start: 59,
+  end: 71,
+  loc: SourceLocation {
+    start: Position { line: 5, column: 2, index: 59 },
+    end: Position { line: 5, column: 14, index: 71 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  method: false,
+  key: Node {
+    type: 'Identifier',
+    start: 59,
+    end: 63,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'nome'
+    },
+    name: 'nome'
+  },
+  computed: false,
+  shorthand: false,
+  value: Node {
+    type: 'StringLiteral',
+    start: 65,
+    end: 71,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 'João', raw: '"João"' },
+    value: 'João'
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 59,
+  end: 63,
+  loc: SourceLocation {
+    start: Position { line: 5, column: 2, index: 59 },
+    end: Position { line: 5, column: 6, index: 63 },
+    filename: undefined,
+    identifierName: 'nome'
+  },
+  name: 'nome'
+}
+Node {
+  type: 'StringLiteral',
+  start: 65,
+  end: 71,
+  loc: SourceLocation {
+    start: Position { line: 5, column: 8, index: 65 },
+    end: Position { line: 5, column: 14, index: 71 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 'João', raw: '"João"' },
+  value: 'João'
+}
+Node {
+  type: 'ObjectProperty',
+  start: 75,
+  end: 84,
+  loc: SourceLocation {
+    start: Position { line: 6, column: 2, index: 75 },
+    end: Position { line: 6, column: 11, index: 84 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  method: false,
+  key: Node {
+    type: 'Identifier',
+    start: 75,
+    end: 80,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'idade'
+    },
+    name: 'idade'
+  },
+  computed: false,
+  shorthand: false,
+  value: Node {
+    type: 'NumericLiteral',
+    start: 82,
+    end: 84,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 20, raw: '20' },
+    value: 20
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 75,
+  end: 80,
+  loc: SourceLocation {
+    start: Position { line: 6, column: 2, index: 75 },
+    end: Position { line: 6, column: 7, index: 80 },
+    filename: undefined,
+    identifierName: 'idade'
+  },
+  name: 'idade'
+}
+Node {
+  type: 'NumericLiteral',
+  start: 82,
+  end: 84,
+  loc: SourceLocation {
+    start: Position { line: 6, column: 9, index: 82 },
+    end: Position { line: 6, column: 11, index: 84 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 20, raw: '20' },
+  value: 20
+}
+Node {
+  type: 'FunctionDeclaration',
+  start: 90,
+  end: 208,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 0, index: 90 },
+    end: Position { line: 15, column: 1, index: 208 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  id: Node {
+    type: 'Identifier',
+    start: 99,
+    end: 109,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'podeEntrar'
+    },
+    name: 'podeEntrar'
+  },
+  generator: false,
+  async: false,
+  params: [
+    Node {
+      type: 'Identifier',
+      start: 110,
+      end: 123,
+      loc: [SourceLocation],
+      name: 'idade',
+      typeAnnotation: [Node]
+    }
+  ],
+  returnType: Node {
+    type: 'TSTypeAnnotation',
+    start: 124,
+    end: 133,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    typeAnnotation: Node {
+      type: 'TSBooleanKeyword',
+      start: 126,
+      end: 133,
+      loc: [SourceLocation]
+    }
+  },
+  body: Node {
+    type: 'BlockStatement',
+    start: 134,
+    end: 208,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    body: [ [Node] ],
+    directives: []
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 99,
+  end: 109,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 9, index: 99 },
+    end: Position { line: 9, column: 19, index: 109 },
+    filename: undefined,
+    identifierName: 'podeEntrar'
+  },
+  name: 'podeEntrar'
+}
+Node {
+  type: 'Identifier',
+  start: 110,
+  end: 123,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 20, index: 110 },
+    end: Position { line: 9, column: 33, index: 123 },
+    filename: undefined,
+    identifierName: 'idade'
+  },
+  name: 'idade',
+  typeAnnotation: Node {
+    type: 'TSTypeAnnotation',
+    start: 115,
+    end: 123,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    typeAnnotation: Node {
+      type: 'TSNumberKeyword',
+      start: 117,
+      end: 123,
+      loc: [SourceLocation]
+    }
+  }
+}
+Node {
+  type: 'TSTypeAnnotation',
+  start: 115,
+  end: 123,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 25, index: 115 },
+    end: Position { line: 9, column: 33, index: 123 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  typeAnnotation: Node {
+    type: 'TSNumberKeyword',
+    start: 117,
+    end: 123,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    }
+  }
+}
+Node {
+  type: 'TSNumberKeyword',
+  start: 117,
+  end: 123,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 27, index: 117 },
+    end: Position { line: 9, column: 33, index: 123 },
+    filename: undefined,
+    identifierName: undefined
+  }
+}
+Node {
+  type: 'TSTypeAnnotation',
+  start: 124,
+  end: 133,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 34, index: 124 },
+    end: Position { line: 9, column: 43, index: 133 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  typeAnnotation: Node {
+    type: 'TSBooleanKeyword',
+    start: 126,
+    end: 133,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    }
+  }
+}
+Node {
+  type: 'TSBooleanKeyword',
+  start: 126,
+  end: 133,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 36, index: 126 },
+    end: Position { line: 9, column: 43, index: 133 },
+    filename: undefined,
+    identifierName: undefined
+  }
+}
+Node {
+  type: 'BlockStatement',
+  start: 134,
+  end: 208,
+  loc: SourceLocation {
+    start: Position { line: 9, column: 44, index: 134 },
+    end: Position { line: 15, column: 1, index: 208 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  body: [
+    Node {
+      type: 'IfStatement',
+      start: 138,
+      end: 206,
+      loc: [SourceLocation],
+      test: [Node],
+      consequent: [Node],
+      alternate: [Node]
+    }
+  ],
+  directives: []
+}
+Node {
+  type: 'IfStatement',
+  start: 138,
+  end: 206,
+  loc: SourceLocation {
+    start: Position { line: 10, column: 2, index: 138 },
+    end: Position { line: 14, column: 3, index: 206 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  test: Node {
+    type: 'BinaryExpression',
+    start: 142,
+    end: 153,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    left: Node {
+      type: 'Identifier',
+      start: 142,
+      end: 147,
+      loc: [SourceLocation],
+      name: 'idade'
+    },
+    operator: '>=',
+    right: Node {
+      type: 'NumericLiteral',
+      start: 151,
+      end: 153,
+      loc: [SourceLocation],
+      extra: [Object],
+      value: 18
+    }
+  },
+  consequent: Node {
+    type: 'BlockStatement',
+    start: 155,
+    end: 177,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    body: [ [Node] ],
+    directives: []
+  },
+  alternate: Node {
+    type: 'BlockStatement',
+    start: 183,
+    end: 206,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    body: [ [Node] ],
+    directives: []
+  }
+}
+Node {
+  type: 'BinaryExpression',
+  start: 142,
+  end: 153,
+  loc: SourceLocation {
+    start: Position { line: 10, column: 6, index: 142 },
+    end: Position { line: 10, column: 17, index: 153 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  left: Node {
+    type: 'Identifier',
+    start: 142,
+    end: 147,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'idade'
+    },
+    name: 'idade'
+  },
+  operator: '>=',
+  right: Node {
+    type: 'NumericLiteral',
+    start: 151,
+    end: 153,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 18, raw: '18' },
+    value: 18
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 142,
+  end: 147,
+  loc: SourceLocation {
+    start: Position { line: 10, column: 6, index: 142 },
+    end: Position { line: 10, column: 11, index: 147 },
+    filename: undefined,
+    identifierName: 'idade'
+  },
+  name: 'idade'
+}
+Node {
+  type: 'NumericLiteral',
+  start: 151,
+  end: 153,
+  loc: SourceLocation {
+    start: Position { line: 10, column: 15, index: 151 },
+    end: Position { line: 10, column: 17, index: 153 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 18, raw: '18' },
+  value: 18
+}
+Node {
+  type: 'BlockStatement',
+  start: 155,
+  end: 177,
+  loc: SourceLocation {
+    start: Position { line: 10, column: 19, index: 155 },
+    end: Position { line: 12, column: 3, index: 177 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  body: [
+    Node {
+      type: 'ReturnStatement',
+      start: 161,
+      end: 173,
+      loc: [SourceLocation],
+      argument: [Node]
+    }
+  ],
+  directives: []
+}
+Node {
+  type: 'ReturnStatement',
+  start: 161,
+  end: 173,
+  loc: SourceLocation {
+    start: Position { line: 11, column: 4, index: 161 },
+    end: Position { line: 11, column: 16, index: 173 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  argument: Node {
+    type: 'BooleanLiteral',
+    start: 168,
+    end: 172,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    value: true
+  }
+}
+Node {
+  type: 'BooleanLiteral',
+  start: 168,
+  end: 172,
+  loc: SourceLocation {
+    start: Position { line: 11, column: 11, index: 168 },
+    end: Position { line: 11, column: 15, index: 172 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  value: true
+}
+Node {
+  type: 'BlockStatement',
+  start: 183,
+  end: 206,
+  loc: SourceLocation {
+    start: Position { line: 12, column: 9, index: 183 },
+    end: Position { line: 14, column: 3, index: 206 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  body: [
+    Node {
+      type: 'ReturnStatement',
+      start: 189,
+      end: 202,
+      loc: [SourceLocation],
+      argument: [Node]
+    }
+  ],
+  directives: []
+}
+Node {
+  type: 'ReturnStatement',
+  start: 189,
+  end: 202,
+  loc: SourceLocation {
+    start: Position { line: 13, column: 4, index: 189 },
+    end: Position { line: 13, column: 17, index: 202 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  argument: Node {
+    type: 'BooleanLiteral',
+    start: 196,
+    end: 201,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    value: false
+  }
+}
+Node {
+  type: 'BooleanLiteral',
+  start: 196,
+  end: 201,
+  loc: SourceLocation {
+    start: Position { line: 13, column: 11, index: 196 },
+    end: Position { line: 13, column: 16, index: 201 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  value: false
+}
+Node {
+  type: 'ForStatement',
+  start: 210,
+  end: 259,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 0, index: 210 },
+    end: Position { line: 19, column: 1, index: 259 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  init: Node {
+    type: 'VariableDeclaration',
+    start: 215,
+    end: 224,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    declarations: [ [Node] ],
+    kind: 'let'
+  },
+  test: Node {
+    type: 'BinaryExpression',
+    start: 226,
+    end: 231,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    left: Node {
+      type: 'Identifier',
+      start: 226,
+      end: 227,
+      loc: [SourceLocation],
+      name: 'i'
+    },
+    operator: '<',
+    right: Node {
+      type: 'NumericLiteral',
+      start: 230,
+      end: 231,
+      loc: [SourceLocation],
+      extra: [Object],
+      value: 3
+    }
+  },
+  update: Node {
+    type: 'UpdateExpression',
+    start: 233,
+    end: 236,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    operator: '++',
+    prefix: false,
+    argument: Node {
+      type: 'Identifier',
+      start: 233,
+      end: 234,
+      loc: [SourceLocation],
+      name: 'i'
+    }
+  },
+  body: Node {
+    type: 'BlockStatement',
+    start: 238,
+    end: 259,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    body: [ [Node] ],
+    directives: []
+  }
+}
+Node {
+  type: 'VariableDeclaration',
+  start: 215,
+  end: 224,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 5, index: 215 },
+    end: Position { line: 17, column: 14, index: 224 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  declarations: [
+    Node {
+      type: 'VariableDeclarator',
+      start: 219,
+      end: 224,
+      loc: [SourceLocation],
+      id: [Node],
+      init: [Node]
+    }
+  ],
+  kind: 'let'
+}
+Node {
+  type: 'VariableDeclarator',
+  start: 219,
+  end: 224,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 9, index: 219 },
+    end: Position { line: 17, column: 14, index: 224 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  id: Node {
+    type: 'Identifier',
+    start: 219,
+    end: 220,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'i'
+    },
+    name: 'i'
+  },
+  init: Node {
+    type: 'NumericLiteral',
+    start: 223,
+    end: 224,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 0, raw: '0' },
+    value: 0
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 219,
+  end: 220,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 9, index: 219 },
+    end: Position { line: 17, column: 10, index: 220 },
+    filename: undefined,
+    identifierName: 'i'
+  },
+  name: 'i'
+}
+Node {
+  type: 'NumericLiteral',
+  start: 223,
+  end: 224,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 13, index: 223 },
+    end: Position { line: 17, column: 14, index: 224 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 0, raw: '0' },
+  value: 0
+}
+Node {
+  type: 'BinaryExpression',
+  start: 226,
+  end: 231,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 16, index: 226 },
+    end: Position { line: 17, column: 21, index: 231 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  left: Node {
+    type: 'Identifier',
+    start: 226,
+    end: 227,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'i'
+    },
+    name: 'i'
+  },
+  operator: '<',
+  right: Node {
+    type: 'NumericLiteral',
+    start: 230,
+    end: 231,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 3, raw: '3' },
+    value: 3
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 226,
+  end: 227,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 16, index: 226 },
+    end: Position { line: 17, column: 17, index: 227 },
+    filename: undefined,
+    identifierName: 'i'
+  },
+  name: 'i'
+}
+Node {
+  type: 'NumericLiteral',
+  start: 230,
+  end: 231,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 20, index: 230 },
+    end: Position { line: 17, column: 21, index: 231 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 3, raw: '3' },
+  value: 3
+}
+Node {
+  type: 'UpdateExpression',
+  start: 233,
+  end: 236,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 23, index: 233 },
+    end: Position { line: 17, column: 26, index: 236 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  operator: '++',
+  prefix: false,
+  argument: Node {
+    type: 'Identifier',
+    start: 233,
+    end: 234,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'i'
+    },
+    name: 'i'
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 233,
+  end: 234,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 23, index: 233 },
+    end: Position { line: 17, column: 24, index: 234 },
+    filename: undefined,
+    identifierName: 'i'
+  },
+  name: 'i'
+}
+Node {
+  type: 'BlockStatement',
+  start: 238,
+  end: 259,
+  loc: SourceLocation {
+    start: Position { line: 17, column: 28, index: 238 },
+    end: Position { line: 19, column: 1, index: 259 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  body: [
+    Node {
+      type: 'ExpressionStatement',
+      start: 242,
+      end: 257,
+      loc: [SourceLocation],
+      expression: [Node]
+    }
+  ],
+  directives: []
+}
+Node {
+  type: 'ExpressionStatement',
+  start: 242,
+  end: 257,
+  loc: SourceLocation {
+    start: Position { line: 18, column: 2, index: 242 },
+    end: Position { line: 18, column: 17, index: 257 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  expression: Node {
+    type: 'CallExpression',
+    start: 242,
+    end: 256,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    callee: Node {
+      type: 'MemberExpression',
+      start: 242,
+      end: 253,
+      loc: [SourceLocation],
+      object: [Node],
+      computed: false,
+      property: [Node]
+    },
+    arguments: [ [Node] ]
+  }
+}
+Node {
+  type: 'CallExpression',
+  start: 242,
+  end: 256,
+  loc: SourceLocation {
+    start: Position { line: 18, column: 2, index: 242 },
+    end: Position { line: 18, column: 16, index: 256 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  callee: Node {
+    type: 'MemberExpression',
+    start: 242,
+    end: 253,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    object: Node {
+      type: 'Identifier',
+      start: 242,
+      end: 249,
+      loc: [SourceLocation],
+      name: 'console'
+    },
+    computed: false,
+    property: Node {
+      type: 'Identifier',
+      start: 250,
+      end: 253,
+      loc: [SourceLocation],
+      name: 'log'
+    }
+  },
+  arguments: [
+    Node {
+      type: 'Identifier',
+      start: 254,
+      end: 255,
+      loc: [SourceLocation],
+      name: 'i'
+    }
+  ]
+}
+Node {
+  type: 'MemberExpression',
+  start: 242,
+  end: 253,
+  loc: SourceLocation {
+    start: Position { line: 18, column: 2, index: 242 },
+    end: Position { line: 18, column: 13, index: 253 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  object: Node {
+    type: 'Identifier',
+    start: 242,
+    end: 249,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'console'
+    },
+    name: 'console'
+  },
+  computed: false,
+  property: Node {
+    type: 'Identifier',
+    start: 250,
+    end: 253,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'log'
+    },
+    name: 'log'
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 242,
+  end: 249,
+  loc: SourceLocation {
+    start: Position { line: 18, column: 2, index: 242 },
+    end: Position { line: 18, column: 9, index: 249 },
+    filename: undefined,
+    identifierName: 'console'
+  },
+  name: 'console'
+}
+Node {
+  type: 'Identifier',
+  start: 250,
+  end: 253,
+  loc: SourceLocation {
+    start: Position { line: 18, column: 10, index: 250 },
+    end: Position { line: 18, column: 13, index: 253 },
+    filename: undefined,
+    identifierName: 'log'
+  },
+  name: 'log'
+}
+Node {
+  type: 'Identifier',
+  start: 254,
+  end: 255,
+  loc: SourceLocation {
+    start: Position { line: 18, column: 14, index: 254 },
+    end: Position { line: 18, column: 15, index: 255 },
+    filename: undefined,
+    identifierName: 'i'
+  },
+  name: 'i'
+}
+Node {
+  type: 'WhileStatement',
+  start: 261,
+  end: 291,
+  loc: SourceLocation {
+    start: Position { line: 21, column: 0, index: 261 },
+    end: Position { line: 23, column: 1, index: 291 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  test: Node {
+    type: 'BinaryExpression',
+    start: 268,
+    end: 277,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    left: Node {
+      type: 'Identifier',
+      start: 268,
+      end: 273,
+      loc: [SourceLocation],
+      name: 'idade'
+    },
+    operator: '>',
+    right: Node {
+      type: 'NumericLiteral',
+      start: 276,
+      end: 277,
+      loc: [SourceLocation],
+      extra: [Object],
+      value: 0
+    }
+  },
+  body: Node {
+    type: 'BlockStatement',
+    start: 279,
+    end: 291,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    body: [ [Node] ],
+    directives: []
+  }
+}
+Node {
+  type: 'BinaryExpression',
+  start: 268,
+  end: 277,
+  loc: SourceLocation {
+    start: Position { line: 21, column: 7, index: 268 },
+    end: Position { line: 21, column: 16, index: 277 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  left: Node {
+    type: 'Identifier',
+    start: 268,
+    end: 273,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'idade'
+    },
+    name: 'idade'
+  },
+  operator: '>',
+  right: Node {
+    type: 'NumericLiteral',
+    start: 276,
+    end: 277,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 0, raw: '0' },
+    value: 0
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 268,
+  end: 273,
+  loc: SourceLocation {
+    start: Position { line: 21, column: 7, index: 268 },
+    end: Position { line: 21, column: 12, index: 273 },
+    filename: undefined,
+    identifierName: 'idade'
+  },
+  name: 'idade'
+}
+Node {
+  type: 'NumericLiteral',
+  start: 276,
+  end: 277,
+  loc: SourceLocation {
+    start: Position { line: 21, column: 15, index: 276 },
+    end: Position { line: 21, column: 16, index: 277 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 0, raw: '0' },
+  value: 0
+}
+Node {
+  type: 'BlockStatement',
+  start: 279,
+  end: 291,
+  loc: SourceLocation {
+    start: Position { line: 21, column: 18, index: 279 },
+    end: Position { line: 23, column: 1, index: 291 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  body: [
+    Node {
+      type: 'BreakStatement',
+      start: 283,
+      end: 289,
+      loc: [SourceLocation],
+      label: null
+    }
+  ],
+  directives: []
+}
+Node {
+  type: 'BreakStatement',
+  start: 283,
+  end: 289,
+  loc: SourceLocation {
+    start: Position { line: 22, column: 2, index: 283 },
+    end: Position { line: 22, column: 8, index: 289 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  label: null
+}
+Node {
+  type: 'ForInStatement',
+  start: 293,
+  end: 346,
+  loc: SourceLocation {
+    start: Position { line: 25, column: 0, index: 293 },
+    end: Position { line: 27, column: 1, index: 346 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  left: Node {
+    type: 'VariableDeclaration',
+    start: 298,
+    end: 309,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    declarations: [ [Node] ],
+    kind: 'const'
+  },
+  right: Node {
+    type: 'Identifier',
+    start: 313,
+    end: 319,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'pessoa'
+    },
+    name: 'pessoa'
+  },
+  body: Node {
+    type: 'BlockStatement',
+    start: 321,
+    end: 346,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    body: [ [Node] ],
+    directives: []
+  }
+}
+Node {
+  type: 'VariableDeclaration',
+  start: 298,
+  end: 309,
+  loc: SourceLocation {
+    start: Position { line: 25, column: 5, index: 298 },
+    end: Position { line: 25, column: 16, index: 309 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  declarations: [
+    Node {
+      type: 'VariableDeclarator',
+      start: 304,
+      end: 309,
+      loc: [SourceLocation],
+      id: [Node],
+      init: null
+    }
+  ],
+  kind: 'const'
+}
+Node {
+  type: 'VariableDeclarator',
+  start: 304,
+  end: 309,
+  loc: SourceLocation {
+    start: Position { line: 25, column: 11, index: 304 },
+    end: Position { line: 25, column: 16, index: 309 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  id: Node {
+    type: 'Identifier',
+    start: 304,
+    end: 309,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'chave'
+    },
+    name: 'chave'
+  },
+  init: null
+}
+Node {
+  type: 'Identifier',
+  start: 304,
+  end: 309,
+  loc: SourceLocation {
+    start: Position { line: 25, column: 11, index: 304 },
+    end: Position { line: 25, column: 16, index: 309 },
+    filename: undefined,
+    identifierName: 'chave'
+  },
+  name: 'chave'
+}
+Node {
+  type: 'Identifier',
+  start: 313,
+  end: 319,
+  loc: SourceLocation {
+    start: Position { line: 25, column: 20, index: 313 },
+    end: Position { line: 25, column: 26, index: 319 },
+    filename: undefined,
+    identifierName: 'pessoa'
+  },
+  name: 'pessoa'
+}
+Node {
+  type: 'BlockStatement',
+  start: 321,
+  end: 346,
+  loc: SourceLocation {
+    start: Position { line: 25, column: 28, index: 321 },
+    end: Position { line: 27, column: 1, index: 346 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  body: [
+    Node {
+      type: 'ExpressionStatement',
+      start: 325,
+      end: 344,
+      loc: [SourceLocation],
+      expression: [Node]
+    }
+  ],
+  directives: []
+}
+Node {
+  type: 'ExpressionStatement',
+  start: 325,
+  end: 344,
+  loc: SourceLocation {
+    start: Position { line: 26, column: 2, index: 325 },
+    end: Position { line: 26, column: 21, index: 344 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  expression: Node {
+    type: 'CallExpression',
+    start: 325,
+    end: 343,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    callee: Node {
+      type: 'MemberExpression',
+      start: 325,
+      end: 336,
+      loc: [SourceLocation],
+      object: [Node],
+      computed: false,
+      property: [Node]
+    },
+    arguments: [ [Node] ]
+  }
+}
+Node {
+  type: 'CallExpression',
+  start: 325,
+  end: 343,
+  loc: SourceLocation {
+    start: Position { line: 26, column: 2, index: 325 },
+    end: Position { line: 26, column: 20, index: 343 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  callee: Node {
+    type: 'MemberExpression',
+    start: 325,
+    end: 336,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    object: Node {
+      type: 'Identifier',
+      start: 325,
+      end: 332,
+      loc: [SourceLocation],
+      name: 'console'
+    },
+    computed: false,
+    property: Node {
+      type: 'Identifier',
+      start: 333,
+      end: 336,
+      loc: [SourceLocation],
+      name: 'log'
+    }
+  },
+  arguments: [
+    Node {
+      type: 'Identifier',
+      start: 337,
+      end: 342,
+      loc: [SourceLocation],
+      name: 'chave'
+    }
+  ]
+}
+Node {
+  type: 'MemberExpression',
+  start: 325,
+  end: 336,
+  loc: SourceLocation {
+    start: Position { line: 26, column: 2, index: 325 },
+    end: Position { line: 26, column: 13, index: 336 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  object: Node {
+    type: 'Identifier',
+    start: 325,
+    end: 332,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'console'
+    },
+    name: 'console'
+  },
+  computed: false,
+  property: Node {
+    type: 'Identifier',
+    start: 333,
+    end: 336,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'log'
+    },
+    name: 'log'
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 325,
+  end: 332,
+  loc: SourceLocation {
+    start: Position { line: 26, column: 2, index: 325 },
+    end: Position { line: 26, column: 9, index: 332 },
+    filename: undefined,
+    identifierName: 'console'
+  },
+  name: 'console'
+}
+Node {
+  type: 'Identifier',
+  start: 333,
+  end: 336,
+  loc: SourceLocation {
+    start: Position { line: 26, column: 10, index: 333 },
+    end: Position { line: 26, column: 13, index: 336 },
+    filename: undefined,
+    identifierName: 'log'
+  },
+  name: 'log'
+}
+Node {
+  type: 'Identifier',
+  start: 337,
+  end: 342,
+  loc: SourceLocation {
+    start: Position { line: 26, column: 14, index: 337 },
+    end: Position { line: 26, column: 19, index: 342 },
+    filename: undefined,
+    identifierName: 'chave'
+  },
+  name: 'chave'
+}
+Node {
+  type: 'SwitchStatement',
+  start: 348,
+  end: 469,
+  loc: SourceLocation {
+    start: Position { line: 29, column: 0, index: 348 },
+    end: Position { line: 36, column: 1, index: 469 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  discriminant: Node {
+    type: 'Identifier',
+    start: 356,
+    end: 360,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'nome'
+    },
+    name: 'nome'
+  },
+  cases: [
+    Node {
+      type: 'SwitchCase',
+      start: 366,
+      end: 420,
+      loc: [SourceLocation],
+      consequent: [Array],
+      test: [Node]
+    },
+    Node {
+      type: 'SwitchCase',
+      start: 424,
+      end: 467,
+      loc: [SourceLocation],
+      consequent: [Array],
+      test: null
+    }
+  ]
+}
+Node {
+  type: 'Identifier',
+  start: 356,
+  end: 360,
+  loc: SourceLocation {
+    start: Position { line: 29, column: 8, index: 356 },
+    end: Position { line: 29, column: 12, index: 360 },
+    filename: undefined,
+    identifierName: 'nome'
+  },
+  name: 'nome'
+}
+Node {
+  type: 'SwitchCase',
+  start: 366,
+  end: 420,
+  loc: SourceLocation {
+    start: Position { line: 30, column: 2, index: 366 },
+    end: Position { line: 32, column: 10, index: 420 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  consequent: [
+    Node {
+      type: 'ExpressionStatement',
+      start: 383,
+      end: 409,
+      loc: [SourceLocation],
+      expression: [Node]
+    },
+    Node {
+      type: 'BreakStatement',
+      start: 414,
+      end: 420,
+      loc: [SourceLocation],
+      label: null
+    }
+  ],
+  test: Node {
+    type: 'StringLiteral',
+    start: 371,
+    end: 377,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    extra: { rawValue: 'João', raw: '"João"' },
+    value: 'João'
+  }
+}
+Node {
+  type: 'StringLiteral',
+  start: 371,
+  end: 377,
+  loc: SourceLocation {
+    start: Position { line: 30, column: 7, index: 371 },
+    end: Position { line: 30, column: 13, index: 377 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 'João', raw: '"João"' },
+  value: 'João'
+}
+Node {
+  type: 'ExpressionStatement',
+  start: 383,
+  end: 409,
+  loc: SourceLocation {
+    start: Position { line: 31, column: 4, index: 383 },
+    end: Position { line: 31, column: 30, index: 409 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  expression: Node {
+    type: 'CallExpression',
+    start: 383,
+    end: 408,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    callee: Node {
+      type: 'MemberExpression',
+      start: 383,
+      end: 394,
+      loc: [SourceLocation],
+      object: [Node],
+      computed: false,
+      property: [Node]
+    },
+    arguments: [ [Node] ]
+  }
+}
+Node {
+  type: 'CallExpression',
+  start: 383,
+  end: 408,
+  loc: SourceLocation {
+    start: Position { line: 31, column: 4, index: 383 },
+    end: Position { line: 31, column: 29, index: 408 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  callee: Node {
+    type: 'MemberExpression',
+    start: 383,
+    end: 394,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    object: Node {
+      type: 'Identifier',
+      start: 383,
+      end: 390,
+      loc: [SourceLocation],
+      name: 'console'
+    },
+    computed: false,
+    property: Node {
+      type: 'Identifier',
+      start: 391,
+      end: 394,
+      loc: [SourceLocation],
+      name: 'log'
+    }
+  },
+  arguments: [
+    Node {
+      type: 'StringLiteral',
+      start: 395,
+      end: 407,
+      loc: [SourceLocation],
+      extra: [Object],
+      value: 'Encontrado'
+    }
+  ]
+}
+Node {
+  type: 'MemberExpression',
+  start: 383,
+  end: 394,
+  loc: SourceLocation {
+    start: Position { line: 31, column: 4, index: 383 },
+    end: Position { line: 31, column: 15, index: 394 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  object: Node {
+    type: 'Identifier',
+    start: 383,
+    end: 390,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'console'
+    },
+    name: 'console'
+  },
+  computed: false,
+  property: Node {
+    type: 'Identifier',
+    start: 391,
+    end: 394,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'log'
+    },
+    name: 'log'
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 383,
+  end: 390,
+  loc: SourceLocation {
+    start: Position { line: 31, column: 4, index: 383 },
+    end: Position { line: 31, column: 11, index: 390 },
+    filename: undefined,
+    identifierName: 'console'
+  },
+  name: 'console'
+}
+Node {
+  type: 'Identifier',
+  start: 391,
+  end: 394,
+  loc: SourceLocation {
+    start: Position { line: 31, column: 12, index: 391 },
+    end: Position { line: 31, column: 15, index: 394 },
+    filename: undefined,
+    identifierName: 'log'
+  },
+  name: 'log'
+}
+Node {
+  type: 'StringLiteral',
+  start: 395,
+  end: 407,
+  loc: SourceLocation {
+    start: Position { line: 31, column: 16, index: 395 },
+    end: Position { line: 31, column: 28, index: 407 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 'Encontrado', raw: '"Encontrado"' },
+  value: 'Encontrado'
+}
+Node {
+  type: 'BreakStatement',
+  start: 414,
+  end: 420,
+  loc: SourceLocation {
+    start: Position { line: 32, column: 4, index: 414 },
+    end: Position { line: 32, column: 10, index: 420 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  label: null
+}
+Node {
+  type: 'SwitchCase',
+  start: 424,
+  end: 467,
+  loc: SourceLocation {
+    start: Position { line: 34, column: 2, index: 424 },
+    end: Position { line: 35, column: 34, index: 467 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  consequent: [
+    Node {
+      type: 'ExpressionStatement',
+      start: 437,
+      end: 467,
+      loc: [SourceLocation],
+      expression: [Node]
+    }
+  ],
+  test: null
+}
+Node {
+  type: 'ExpressionStatement',
+  start: 437,
+  end: 467,
+  loc: SourceLocation {
+    start: Position { line: 35, column: 4, index: 437 },
+    end: Position { line: 35, column: 34, index: 467 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  expression: Node {
+    type: 'CallExpression',
+    start: 437,
+    end: 466,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    callee: Node {
+      type: 'MemberExpression',
+      start: 437,
+      end: 448,
+      loc: [SourceLocation],
+      object: [Node],
+      computed: false,
+      property: [Node]
+    },
+    arguments: [ [Node] ]
+  }
+}
+Node {
+  type: 'CallExpression',
+  start: 437,
+  end: 466,
+  loc: SourceLocation {
+    start: Position { line: 35, column: 4, index: 437 },
+    end: Position { line: 35, column: 33, index: 466 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  callee: Node {
+    type: 'MemberExpression',
+    start: 437,
+    end: 448,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: undefined
+    },
+    object: Node {
+      type: 'Identifier',
+      start: 437,
+      end: 444,
+      loc: [SourceLocation],
+      name: 'console'
+    },
+    computed: false,
+    property: Node {
+      type: 'Identifier',
+      start: 445,
+      end: 448,
+      loc: [SourceLocation],
+      name: 'log'
+    }
+  },
+  arguments: [
+    Node {
+      type: 'StringLiteral',
+      start: 449,
+      end: 465,
+      loc: [SourceLocation],
+      extra: [Object],
+      value: 'Não encontrado'
+    }
+  ]
+}
+Node {
+  type: 'MemberExpression',
+  start: 437,
+  end: 448,
+  loc: SourceLocation {
+    start: Position { line: 35, column: 4, index: 437 },
+    end: Position { line: 35, column: 15, index: 448 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  object: Node {
+    type: 'Identifier',
+    start: 437,
+    end: 444,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'console'
+    },
+    name: 'console'
+  },
+  computed: false,
+  property: Node {
+    type: 'Identifier',
+    start: 445,
+    end: 448,
+    loc: SourceLocation {
+      start: [Position],
+      end: [Position],
+      filename: undefined,
+      identifierName: 'log'
+    },
+    name: 'log'
+  }
+}
+Node {
+  type: 'Identifier',
+  start: 437,
+  end: 444,
+  loc: SourceLocation {
+    start: Position { line: 35, column: 4, index: 437 },
+    end: Position { line: 35, column: 11, index: 444 },
+    filename: undefined,
+    identifierName: 'console'
+  },
+  name: 'console'
+}
+Node {
+  type: 'Identifier',
+  start: 445,
+  end: 448,
+  loc: SourceLocation {
+    start: Position { line: 35, column: 12, index: 445 },
+    end: Position { line: 35, column: 15, index: 448 },
+    filename: undefined,
+    identifierName: 'log'
+  },
+  name: 'log'
+}
+Node {
+  type: 'StringLiteral',
+  start: 449,
+  end: 465,
+  loc: SourceLocation {
+    start: Position { line: 35, column: 16, index: 449 },
+    end: Position { line: 35, column: 32, index: 465 },
+    filename: undefined,
+    identifierName: undefined
+  },
+  extra: { rawValue: 'Não encontrado', raw: '"Não encontrado"' },
+  value: 'Não encontrado'
+}

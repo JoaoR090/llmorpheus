@@ -1,0 +1,71 @@
+Your task is to apply mutation testing to the following code:
+```
+const nome = "João";
+const idade = 20;
+
+const pessoa = {
+  nome: "João",
+  idade: 20,
+};
+
+function podeEntrar(idade: number): boolean {
+  if (idade >= 18) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+for (let i = 0; i < 3; i++) {
+  console.log(<PLACEHOLDER>);
+}
+
+while (idade > 0) {
+  break;
+}
+
+for (const chave in pessoa) {
+  console.log(chave);
+}
+
+switch (nome) {
+  case "João":
+    console.log("Encontrado");
+    break;
+
+  default:
+    console.log("Não encontrado");
+}
+
+```
+
+by replacing the PLACEHOLDER with a buggy code fragment that has different
+behavior than the original code fragment, which was:
+```
+i
+```
+Please consider changes such as using different operators, changing constants,
+referring to different variables, object properties, functions, or methods.  
+
+Provide three answers as fenced code blocks containing a single line of code,
+using the following template:
+
+Option 1: The PLACEHOLDER can be replaced with:
+```
+<code fragment>
+```
+This would result in different behavior because <brief explanation>.
+
+Option 2: The PLACEHOLDER can be replaced with:
+```
+<code fragment>
+```
+This would result in different behavior because <brief explanation>.
+
+Option 3: The PLACEHOLDER can be replaced with:
+```
+<code fragment>
+```
+This would result in different behavior because <brief explanation>.
+
+Please conclude your response with "DONE."

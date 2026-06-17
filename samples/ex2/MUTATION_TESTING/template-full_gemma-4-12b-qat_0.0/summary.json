@@ -1,0 +1,28 @@
+{
+  "nrPrompts": 18,
+  "nrCandidates": 0,
+  "nrSyntacticallyValid": 0,
+  "nrSyntacticallyInvalid": 0,
+  "nrIdentical": 0,
+  "nrDuplicate": 0,
+  "nrLocations": 0,
+  "totalPromptTokens": 0,
+  "totalCompletionTokens": 0,
+  "totalTokens": 0,
+  "metaInfo": {
+    "modelName": "gemma-4-12b-qat",
+    "temperature": 0,
+    "maxTokens": 5000,
+    "maxNrPrompts": 1250,
+    "rateLimit": 0,
+    "nrAttempts": 3,
+    "template": "templates/template-full.hb",
+    "systemPrompt": "SystemPrompt-MutationTestingExpert.txt",
+    "mutate": "index.ts",
+    "ignore": "",
+    "benchmark": false,
+    "maxLinesInPlaceHolder": 1
+  },
+  "nrRetries": 54,
+  "nrFailures": 0
+}
