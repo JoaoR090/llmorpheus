@@ -84,19 +84,12 @@ export class PromptSpecGenerator {
   }
 
   private createPromptSpecs() {
-    for (let i = 0; i < this.files.length; i++) {
-      const file = this.files[i];
-      this.promptSpecs.push(
-        ...this.createPromptSpecsForFile(path.join(this.packagePath, file)),
-      );
-      console.log("Created Prompt Specs:\n");
-      console.log(this.promptSpecs);
-      console.log("\n\n");
+    for (const file in this.files) {
+      this.createPromptSpecsForFile(path.join(this.packagePath, file));
     }
   }
 
-  private createPromptSpecsForFile(file: string): Array<PromptSpec> {
-    const promptSpecs = new Array<PromptSpec>();
+  private createPromptSpecsForFile(file: string): void {
     const code = fs.readFileSync(file, "utf8");
     const ast = parser.parse(code, {
       sourceType: "module",
@@ -118,10 +111,6 @@ export class PromptSpecGenerator {
         outerThis.createPromptSpecsForCall(file, path);
       },
     });
-    console.log("Created Prompt Specs for file:\n");
-    console.log(promptSpecs);
-    console.log("\n\n");
-    return promptSpecs;
   }
 
   private createPromptSpecForIf(file: string, path: any): void {
