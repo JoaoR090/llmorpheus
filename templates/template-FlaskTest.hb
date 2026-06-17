@@ -28,20 +28,4 @@ Opção 1: O PLACEHOLDER pode ser substituído por:
 
 Isso resultaria em um comportamento diferente porque <breve explicação>.
 
-Opção 2: O PLACEHOLDER pode ser substituído por:
-
-```
-<trecho de código>
-```
-
-Isso resultaria em um comportamento diferente porque <breve explicação>.
-
-Opção 3: O PLACEHOLDER pode ser substituído por:
-
-```
-<trecho de código>
-```
-
-Isso resultaria em um comportamento diferente porque <breve explicação>.
-
 Por favor, conclua sua resposta com "DONE."

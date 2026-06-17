@@ -54,11 +54,14 @@ export class PromptSpecGenerator {
       let codeWithPlaceholder = promptSpec.getCodeWithPlaceholder();
       // remove whitespace between "(" and "<PLACEHOLDER>" and
       // between "<PLACEHOLDER>" and ")"
+
       codeWithPlaceholder = codeWithPlaceholder.replace(
         /\(\s*<PLACEHOLDER>\s*\)/g,
         "(<PLACEHOLDER>)",
       );
+
       const nrLines = codeWithPlaceholder.split("\n").length;
+
       if (nrLines > 200) {
         const lineWherePlaceHolderIs = codeWithPlaceholder
           .split("\n")
