@@ -18,7 +18,7 @@ referenciar variáveis diferentes;
 utilizar propriedades de objetos diferentes;
 chamar funções ou métodos diferentes.
 
-Forneça três respostas como blocos de código delimitados (fenced code blocks), contendo apenas uma única linha de código, utilizando o seguinte modelo:
+Forneça uma resposta como bloco de código delimitado (fenced code blocks), contendo apenas uma única linha de código, utilizando o seguinte modelo:
 
 Opção 1: O PLACEHOLDER pode ser substituído por:
 
