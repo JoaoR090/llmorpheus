@@ -84,7 +84,8 @@ export class PromptSpecGenerator {
   }
 
   private createPromptSpecs() {
-    for (const file in this.files) {
+    for (let i = 0; i < this.files.length; i++) {
+      const file = this.files[i];
       this.promptSpecs.push(
         ...this.createPromptSpecsForFile(path.join(this.packagePath, file)),
       );
