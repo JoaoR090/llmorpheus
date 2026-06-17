@@ -102,6 +102,7 @@ export class PromptSpecGenerator {
         // const loc = new SourceLocation(file, path.node.loc!.start.line, path.node.loc!.start.column, path.node.loc!.end.line, path.node.loc!.end.column);
 
         outerThis.createPromptSpecForIf(file, path);
+        console.log(path.node);
         outerThis.createPromptSpecForSwitch(file, path);
         outerThis.createPromptSpecForWhile(file, path);
         outerThis.createPromptSpecForDoWhile(file, path);
