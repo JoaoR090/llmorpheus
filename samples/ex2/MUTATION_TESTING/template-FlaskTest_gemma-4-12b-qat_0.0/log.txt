@@ -1,0 +1,28 @@
+Starting generation of mutants on: Wed, 17 Jun 2026 20:19:14 GMT
+
+generating mutants for the following files: index.ts
+processing prompt 1/20
+processing prompt 2/20
+processing prompt 3/20
+processing prompt 4/20
+processing prompt 5/20
+processing prompt 6/20
+processing prompt 7/20
+processing prompt 8/20
+processing prompt 9/20
+processing prompt 10/20
+processing prompt 11/20
+processing prompt 12/20
+processing prompt 13/20
+processing prompt 14/20
+processing prompt 15/20
+processing prompt 16/20
+processing prompt 17/20
+processing prompt 18/20
+processing prompt 19/20
+processing prompt 20/20
+found 0 mutant candidates
+discarding 0 syntactically invalid mutants
+discarding 0 mutant candidates that are identical to the original code
+discarding 0 duplicate mutants
+wrote 0 mutants in 0 locations to samples/ex2/MUTATION_TESTING/template-FlaskTest_gemma-4-12b-qat_0.0/mutants.json

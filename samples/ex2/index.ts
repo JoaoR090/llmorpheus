@@ -14,7 +14,7 @@ function podeEntrar(idade: number): boolean {
   }
 }
 
-for (let i = 0.0; i < 3; i++) {
+for (let i = 0.0; i < 3.0; i++) {
   console.log(i);
 }
 
