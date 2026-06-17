@@ -5,5 +5,5 @@ npx -p node@20 node benchmark/createMutants.js \
 --path 'samples' \
 --mutate index.ts \
 --model gemma-4-12b-qat \
---maxTokens 2000 \
---template 'templates/template-basic.hb'
+--maxTokens 5000 \
+--template 'templates/template-full.hb'
