@@ -1,0 +1,27 @@
+
+
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```typescript
+subtotal - discount < 200
+```
+
+Isso resultaria em um comportamento diferente porque o operador de comparação foi alterado de `>` para `<`, fazendo com que o frete seja zerado quando (subtotal - discount) for MENOR que 200, em vez de MAIOR.
+
+Opção 2: O PLACEHOLDER pode ser substituído por:
+
+```typescript
+subtotal - discount > 100
+```
+
+Isso resultaria em um comportamento diferente porque a constante `200` foi alterada para `100`, fazendo com que o frete seja zerado em uma faixa de valores muito menor, afetando mais pedidos do que o original.
+
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```typescript
+subtotal > 200
+```
+
+Isso resultaria em um comportamento diferente porque ignora completamente o desconto ao verificar a condição, usando apenas o subtotal bruto em vez de (subtotal - discount), o que poderia resultar em frete sendo zerado em situações diferentes do esperado.
+
+DONE.

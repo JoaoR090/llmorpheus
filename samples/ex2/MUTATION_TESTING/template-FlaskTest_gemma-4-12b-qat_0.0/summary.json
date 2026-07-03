@@ -1,14 +1,14 @@
 {
   "nrPrompts": 20,
-  "nrCandidates": 0,
-  "nrSyntacticallyValid": 0,
-  "nrSyntacticallyInvalid": 0,
-  "nrIdentical": 0,
-  "nrDuplicate": 0,
-  "nrLocations": 0,
-  "totalPromptTokens": 0,
-  "totalCompletionTokens": 0,
-  "totalTokens": 0,
+  "nrCandidates": 20,
+  "nrSyntacticallyValid": 11,
+  "nrSyntacticallyInvalid": 8,
+  "nrIdentical": 1,
+  "nrDuplicate": 1,
+  "nrLocations": 11,
+  "totalPromptTokens": 9181,
+  "totalCompletionTokens": 12366,
+  "totalTokens": 21547,
   "metaInfo": {
     "modelName": "gemma-4-12b-qat",
     "temperature": 0,
@@ -23,6 +23,6 @@
     "benchmark": false,
     "maxLinesInPlaceHolder": 1
   },
-  "nrRetries": 60,
+  "nrRetries": 0,
   "nrFailures": 0
 }

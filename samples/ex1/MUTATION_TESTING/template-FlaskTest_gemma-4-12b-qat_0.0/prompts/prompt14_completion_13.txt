@@ -1,0 +1,25 @@
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```typescript
+finalTotal > 0
+```
+
+Isso resultaria em um comportamento diferente porque a condição original (`finalTotal > 50`) exige que o total final seja estritamente maior que 50 para ganhar pontos, enquanto a mutação aceita qualquer valor positivo (incluindo valores entre 0 e 50), alterando drasticamente quando os pontos de fidelidade são concedidos.
+
+Opção 2: O PLACEHOLDER pode ser substituído por:
+
+```typescript
+finalTotal >= 50
+```
+
+Isso resultaria em um comportamento diferente porque a condição original usa o operador `>` (maior que), excluindo exatamente 50, enquanto esta mutação usa `>=` (maior ou igual), incluindo o caso onde o total é exatamente 50, fazendo com que pontos sejam ganhos em uma situação anteriormente negada.
+
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```typescript
+subtotal > 50
+```
+
+Isso resultaria em um comportamento diferente porque a condição original verifica se o `finalTotal` (que leva em conta descontos e frete) é maior que 50, enquanto esta mutação verifica apenas o `subtotal` bruto. Isso ignora completamente os efeitos do desconto e do frete na elegibilidade para ganhar pontos, potencialmente concedendo pontos mesmo quando o valor final pago pelo cliente é baixo.
+
+DONE.

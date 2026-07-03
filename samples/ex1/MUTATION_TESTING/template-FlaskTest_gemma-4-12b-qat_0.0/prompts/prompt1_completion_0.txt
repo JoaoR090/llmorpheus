@@ -1,0 +1,27 @@
+
+
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```
+!order.customer && order.customer.isBlacklisted || order.items.length === 0
+```
+
+Isso resultaria em um comportamento diferente porque altera o operador lógico do meio de `||` para `&&`, exigindo que TODAS as condições sejam verdadeiras para lançar o erro, em vez de qualquer uma delas. Isso mudaria completamente a lógica de validação da ordem.
+
+Opção 2: O PLACEHOLDER pode ser substituído por:
+
+```
+order.customer || order.customer.isBlacklisted || order.items.length === 0
+```
+
+Isso resultaria em um comportamento diferente porque remove o operador de negação `!` na primeira condição, fazendo com que a ordem seja considerada inválida quando o cliente EXISTE (ao invés de quando não existe), invertendo completamente o propósito dessa validação.
+
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```
+!order.customer || order.customer.isBlacklisted || order.items.length > 0
+```
+
+Isso resultaria em um comportamento diferente porque altera a comparação de comprimento dos itens de `=== 0` para `> 0`, fazendo com que ordens COM itens sejam consideradas inválidas, o oposto do comportamento original que rejeita ordens SEM itens.
+
+DONE.

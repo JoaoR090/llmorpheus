@@ -1,0 +1,28 @@
+{
+  "nrPrompts": 21,
+  "nrCandidates": 60,
+  "nrSyntacticallyValid": 50,
+  "nrSyntacticallyInvalid": 9,
+  "nrIdentical": 1,
+  "nrDuplicate": 0,
+  "nrLocations": 18,
+  "totalPromptTokens": 8837,
+  "totalCompletionTokens": 2641,
+  "totalTokens": 11478,
+  "metaInfo": {
+    "modelName": "gemma-4-12b-qat",
+    "temperature": 0,
+    "maxTokens": 5000,
+    "maxNrPrompts": 1250,
+    "rateLimit": 0,
+    "nrAttempts": 3,
+    "template": "templates/template-FlaskTest.hb",
+    "systemPrompt": "SystemPrompt-MutationTestingExpert.txt",
+    "mutate": "index.ts",
+    "ignore": "",
+    "benchmark": false,
+    "maxLinesInPlaceHolder": 1
+  },
+  "nrRetries": 0,
+  "nrFailures": 0
+}

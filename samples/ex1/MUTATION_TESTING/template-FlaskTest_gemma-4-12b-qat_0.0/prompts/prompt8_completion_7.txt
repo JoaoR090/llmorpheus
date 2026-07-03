@@ -1,0 +1,27 @@
+
+
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```
+coupon.isActive || subtotal >= coupon.minOrderValue
+```
+
+Isso resultaria em um comportamento diferente porque o operador lógico `||` (OU) faria a condição de desconto ser aplicada se A COUPON estiver ativa OU se o subtotal for maior que o mínimo, em vez de exigir que AMBAS as condições sejam verdadeiras simultaneamente.
+
+Opção 2: O PLACEHOLDER pode ser substituído por:
+
+```
+coupon.isActive && subtotal > coupon.minOrderValue
+```
+
+Isso resultaria em um comportamento diferente porque a comparação `>` exclui casos onde o subtotal é exatamente igual ao valor mínimo do pedido, enquanto o original `>=` inclui esses casos.
+
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```
+coupon.active && subtotal >= coupon.minOrderValue
+```
+
+Isso resultaria em um comportamento diferente porque a propriedade `active` não existe no objeto DiscountCoupon (que tem `isActive`), o que causaria erro de tempo de execução ou comportamento inesperado dependendo do compilador/ambiente.
+
+DONE.

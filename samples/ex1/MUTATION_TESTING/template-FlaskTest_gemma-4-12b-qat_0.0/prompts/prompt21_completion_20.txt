@@ -1,0 +1,25 @@
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```
+let i = 0; i < pointsEarned + 1; i++
+```
+
+Isso resultaria em um comportamento diferente porque o loop original incrementa `newPoints` exatamente `pointsEarned` vezes, enquanto esta mutação faz com que ele seja incrementado `pointsEarned + 1` vezes, alterando incorretamente o total de pontos de fidelidade.
+
+Opção 2: O PLACEHOLDER pode ser substituído por:
+
+```
+let i = 0; i < pointsEarned - 1; i++
+```
+
+Isso resultaria em um comportamento diferente porque o loop original incrementa `newPoints` exatamente `pointsEarned` vezes, enquanto esta mutação faz com que ele seja incrementado `pointsEarned - 1` vezes (assumindo que `pointsEarned > 0`), subtraindo incorretamente pontos do total.
+
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```
+let i = 0; i < order.customer.loyaltyPoints; i++
+```
+
+Isso resultaria em um comportamento diferente porque o loop original itera com base no número de pontos ganhos nesta transação (`pointsEarned`), enquanto esta mutação itera com base nos pontos de fidelidade existentes do cliente, o que pode causar um acúmulo massivo e incorreto de pontos se o cliente já tiver muitos pontos.
+
+DONE.

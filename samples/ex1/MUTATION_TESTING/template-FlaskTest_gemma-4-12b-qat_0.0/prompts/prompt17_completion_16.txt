@@ -1,0 +1,25 @@
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```
+order.customer.isBlacklisted
+```
+
+Isso resultaria em um comportamento diferente porque a lógica original multiplicava os pontos ganhos apenas para clientes premium, mas a mutação faria isso acontecer para clientes na lista negra (blacklisted), alterando completamente o cálculo de recompensas para esse grupo de usuários.
+
+Opção 2: O PLACEHOLDER pode ser substituído por:
+
+```
+true
+```
+
+Isso resultaria em um comportamento diferente porque a condição original dependia do estado específico da propriedade `isPremium` do cliente, mas ao forçar sempre `true`, o código multiplicará os pontos ganhos para todos os clientes, independentemente de serem premium ou não.
+
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```
+order.customer.isPremium && order.items.length > 0
+```
+
+Isso resultaria em um comportamento diferente porque a condição original só verificava se o cliente era premium, mas a mutação adiciona uma dependência extra do número de itens no pedido, fazendo com que clientes premium com pedidos vazios (que já são rejeitados mais cedo) ou pedidos pequenos não recebam o bônus de pontos duplicados.
+
+DONE.
