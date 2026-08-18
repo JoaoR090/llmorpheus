@@ -1,0 +1,25 @@
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```
+i < order.customer.loyaltyPoints
+```
+
+Isso resultaria em um comportamento diferente porque o loop original incrementa `newPoints` exatamente `pointsEarned` vezes (baseado no valor calculado de pontos ganhos), enquanto esta mutação faria o loop iterar pelo número de pontos de fidelidade atuais do cliente, ignorando completamente a variável `pointsEarned`. Isso causaria um acúmulo incorreto de pontos se `loyaltyPoints` for diferente de `pointsEarned`.
+
+Opção 2: O PLACEHOLDER pode ser substituído por:
+
+```
+i < pointsEarned + 1
+```
+
+Isso resultaria em um comportamento diferente porque a condição original `i < pointsEarned` permite que o loop execute exatamente `pointsEarned` iterações (de 0 até `pointsEarned - 1`). Ao adicionar `+ 1`, o loop executará uma iteração a mais, fazendo com que `newPoints` seja incrementado um valor excessivo em relação ao cálculo correto de pontos ganhos.
+
+Opção 3: O PLACEHOLDER pode ser substituído por:
+
+```
+i < pointsEarned - 1
+```
+
+Isso resultaria em um comportamento diferente porque a condição original permite que o loop execute `pointsEarned` iterações. Subtrair 1 da condição faz com que o loop execute uma iteração a menos (executando apenas se `pointsEarned > 0`, e mesmo assim, um número menor de vezes), resultando em um total de pontos atualizados (`newPoints`) inferior ao esperado.
+
+DONE.

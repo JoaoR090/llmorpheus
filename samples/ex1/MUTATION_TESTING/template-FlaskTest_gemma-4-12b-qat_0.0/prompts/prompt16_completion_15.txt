@@ -1,0 +1,9 @@
+Opção 1: O PLACEHOLDER pode ser substituído por:
+
+```
+finalTotal / 5
+```
+
+Isso resultaria em um comportamento diferente porque a divisão por 5 gera o dobro de pontos do que seria gerado pela divisão original por 10, alterando diretamente o cálculo de `newPoints` e, consequentemente, o valor retornado de `updatedLoyaltyPoints`.
+
+DONE.
