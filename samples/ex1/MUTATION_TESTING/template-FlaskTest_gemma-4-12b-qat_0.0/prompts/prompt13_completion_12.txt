@@ -1,9 +1,0 @@
-Opção 1: O PLACEHOLDER pode ser substituído por:
-
-```
-finalTotal > 0
-```
-
-Isso resultaria em um comportamento diferente porque a condição original `finalTotal < 0` só aplicaria o desconto total (zero) se o valor final fosse negativo, enquanto a mutação `finalTotal > 0` aplicaria esse desconto para qualquer compra válida com preço positivo, tornando a lógica de cálculo do total incorreta para casos normais.
-
-DONE.
