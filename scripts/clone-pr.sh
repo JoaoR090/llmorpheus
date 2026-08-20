@@ -1,5 +1,5 @@
 #!/bin/bash
-# uso: ./clone_pr.sh <url> [pasta-destino]
+# uso: ./clone-pr.sh <url> [pasta-destino]
 
 URL="$1"
 REPO="${URL##*/}"
@@ -12,4 +12,4 @@ DEST="$BASE_DEST/$REPO"
 
 (git clone --single-branch "$URL" "$DEST" &> /dev/null) || exit 1
 cd "$DEST" || exit 1
-git checkout HEAD~1  &> /dev/null
+# git checkout HEAD~1  &> /dev/null
