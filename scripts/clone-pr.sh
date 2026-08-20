@@ -4,7 +4,7 @@
 URL="$1"
 REPO="${URL##*/}"
 REPO="${REPO%.git}"
-as
+
 BASE_DEST="${2:-.}"
 DEST="$BASE_DEST/$REPO"
 
