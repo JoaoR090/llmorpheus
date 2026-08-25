@@ -1,5 +1,5 @@
 #!/bin/bash
-# uso: ./clone-pr.sh https://github.com/n8n-io/n8n.git ./clone_prs
+# uso: ./clone-pr.sh <url> ./clone_prs
 
 URL="$1"
 REPO="${URL##*/}"
